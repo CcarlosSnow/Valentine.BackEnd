@@ -1,0 +1,1597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ValentineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_Concepto">
+          <Key>
+            <PropertyRef Name="codigoConcepto" />
+          </Key>
+          <Property Name="codigoConcepto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombreConcepto" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Cuenta">
+          <Key>
+            <PropertyRef Name="codigoCuenta" />
+          </Key>
+          <Property Name="codigoCuenta" Type="smallint" Nullable="false" />
+          <Property Name="fechaApertura" Type="smallint" Nullable="false" />
+          <Property Name="moneda" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="saldo" Type="float" Nullable="false" />
+          <Property Name="codigoInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Cuota">
+          <Key>
+            <PropertyRef Name="codigoCuota" />
+            <PropertyRef Name="codigoPrestamo" />
+          </Key>
+          <Property Name="codigoCuota" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroCuota" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaPago" Type="smallint" Nullable="false" />
+          <Property Name="monto" Type="float" Nullable="false" />
+          <Property Name="fechaVencimiento" Type="smallint" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Inversor">
+          <Key>
+            <PropertyRef Name="codigoInversor" />
+            <PropertyRef Name="codigoPrestatario" />
+          </Key>
+          <Property Name="codigoInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombresInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="apellidosInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
+          <Property Name="paisResidencia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="modoInversion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="conContratoMandato" Type="float" Nullable="false" />
+          <Property Name="comisionCobrada" Type="float" Nullable="false" />
+          <Property Name="rentabilidadMinima" Type="float" Nullable="false" />
+          <Property Name="rentabilidadMaxima" Type="float" Nullable="false" />
+          <Property Name="ofertaMinima" Type="float" Nullable="false" />
+          <Property Name="ofertaMaxima" Type="float" Nullable="false" />
+          <Property Name="destinoCredito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="edadMinima" Type="int" Nullable="false" />
+          <Property Name="edadMaxima" Type="int" Nullable="false" />
+          <Property Name="fechaIngreso" Type="smallint" Nullable="false" />
+          <Property Name="correoElectronico" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroCelular" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="genero" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="distrito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="provincia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="departamento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPostal" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="areaActividad" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rubroActividad" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="esPEP" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInterbancario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Oferta">
+          <Key>
+            <PropertyRef Name="codigoOferta" />
+            <PropertyRef Name="codigoSubasta" />
+          </Key>
+          <Property Name="codigoOferta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="montoOfertado" Type="float" Nullable="false" />
+          <Property Name="teaOfertada" Type="float" Nullable="false" />
+          <Property Name="fecha" Type="smallint" Nullable="false" />
+          <Property Name="ofertaAdmitida" Type="bit" Nullable="false" />
+          <Property Name="codigoSubasta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Pago">
+          <Key>
+            <PropertyRef Name="codigoPago" />
+          </Key>
+          <Property Name="codigoPago" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaPago" Type="smallint" Nullable="false" />
+          <Property Name="fechaProceso" Type="smallint" Nullable="false" />
+          <Property Name="montoPagado" Type="float" Nullable="false" />
+          <Property Name="tipoOperacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ctacteOrigen" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fueProcesado" Type="bit" Nullable="false" />
+          <Property Name="numeroCuota" Type="int" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoCuota" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_PagoDetalle">
+          <Key>
+            <PropertyRef Name="codigoPago" />
+          </Key>
+          <Property Name="montoCuota" Type="float" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" />
+          <Property Name="codigoCuota" Type="varchar" MaxLength="255" />
+          <Property Name="codigoPago" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoConcepto" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Perfil">
+          <Key>
+            <PropertyRef Name="codigoPerfil" />
+          </Key>
+          <Property Name="codigoPerfil" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Prestamo">
+          <Key>
+            <PropertyRef Name="codigoPrestamo" />
+          </Key>
+          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="montoTransferido" Type="float" Nullable="false" />
+          <Property Name="tea" Type="float" Nullable="false" />
+          <Property Name="plazo" Type="int" Nullable="false" />
+          <Property Name="conContratoPrestamo" Type="bit" Nullable="false" />
+          <Property Name="fechaFormalizacion" Type="smallint" Nullable="false" />
+          <Property Name="fechaDesembolso" Type="smallint" Nullable="false" />
+          <Property Name="vigente" Type="float" Nullable="false" />
+          <Property Name="numeroInstruccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cuentaOrigen" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cuentaDesting" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipoOperacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaOperacion" Type="smallint" Nullable="false" />
+          <Property Name="numeroTransferencia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoSolCredito" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Prestatario">
+          <Key>
+            <PropertyRef Name="codigoPrestatario" />
+          </Key>
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombresPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="apellidosPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
+          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ultimaEvaluacion" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Solicitante">
+          <Key>
+            <PropertyRef Name="codigoSolicitante" />
+          </Key>
+          <Property Name="codigoSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroDni" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="docSustentatorio" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="lugarNacimiento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombrePadre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombreMadre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="estatura" Type="float" Nullable="false" />
+          <Property Name="sexo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="estadoCivil" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="gradoInstruccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaEmision" Type="smallint" Nullable="false" />
+          <Property Name="restricciones" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaInscripcion" Type="smallint" Nullable="false" />
+          <Property Name="constanciaVotacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ubigeoDomicilio" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaConsulta" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SolicitudAfiliacion">
+          <Key>
+            <PropertyRef Name="codigoSolAfiliacion" />
+          </Key>
+          <Property Name="codigoSolAfiliacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombresInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="apellidosInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroCelular" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="correoElectronico" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
+          <Property Name="genero" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="paisResidencia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="distrito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="provincia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="departamento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPostal" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="areaActividad" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rubroActividad" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="esPEP" Type="bit" Nullable="false" />
+          <Property Name="codigoInterbancario" Type="smallint" Nullable="false" />
+          <Property Name="clave" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaPresentacion" Type="smallint" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInversor" Type="varchar" MaxLength="255" />
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SolicitudCredito">
+          <Key>
+            <PropertyRef Name="codigoSolCredito" />
+          </Key>
+          <Property Name="codigoSolCredito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombreSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="apellidosSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="digtitoVerificacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="correoElectronico" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroCelular" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
+          <Property Name="genero" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="gradoInstruccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="estadoCivil" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ingresoMensual" Type="float" Nullable="false" />
+          <Property Name="direccionSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="distritoSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="provinciaSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="dptoSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="paisSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="areaActividad" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ocupacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="lugarTrabajo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="destinoCredito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombreConyuge" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="numeroDocConyuge" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="montoSolicitado" Type="float" Nullable="false" />
+          <Property Name="detalleMotivo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="esPEP" Type="float" Nullable="false" />
+          <Property Name="cargoPEP" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipoCuenta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombreEntidad" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInterbancario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="seguroDesgravamen" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="plazoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="dniValido" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ingresoAcorde" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="sobreEndeudado" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="conyugeAcorde" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="creditoActual" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="historialCrediticioAcorde" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="perfilSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="teaAsignada" Type="float" Nullable="false" />
+          <Property Name="puntuacionBuro" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="resultadoEvaluacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="T_Subasata">
+          <Key>
+            <PropertyRef Name="codigoSubasta" />
+          </Key>
+          <Property Name="codigoSubasta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaInicio" Type="smallint" Nullable="false" />
+          <Property Name="fechaTermino" Type="smallint" Nullable="false" />
+          <Property Name="montoRecaudado" Type="float" Nullable="false" />
+          <Property Name="fechaCorreoResultado" Type="smallint" Nullable="false" />
+          <Property Name="fechaAceptacion" Type="smallint" Nullable="false" />
+          <Property Name="montoAceptado" Type="float" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" />
+          <Property Name="codigoSolCredito" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Transaccion">
+          <Key>
+            <PropertyRef Name="codigoTransaccion" />
+          </Key>
+          <Property Name="codigoTransaccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fecha" Type="smallint" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="importe" Type="float" Nullable="false" />
+          <Property Name="balance" Type="float" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" />
+          <Property Name="codigoCuota" Type="varchar" MaxLength="255" />
+          <Property Name="codigoCuenta" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Usuario">
+          <Key>
+            <PropertyRef Name="codigoUsuario" />
+          </Key>
+          <Property Name="codigoUsuario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaAlta" Type="smallint" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="clave" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPerfil" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_T_Cuenta40">
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="1" />
+          <End Role="T_Cuenta" Type="Self.T_Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Principal>
+            <Dependent Role="T_Cuenta">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Cuota37">
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="1" />
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestamo">
+              <PropertyRef Name="codigoPrestamo" />
+            </Principal>
+            <Dependent Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Inversor53">
+          <End Role="T_Prestatario" Type="Self.T_Prestatario" Multiplicity="1" />
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestatario">
+              <PropertyRef Name="codigoPrestatario" />
+            </Principal>
+            <Dependent Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Oferta36">
+          <End Role="T_Subasata" Type="Self.T_Subasata" Multiplicity="1" />
+          <End Role="T_Oferta" Type="Self.T_Oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Subasata">
+              <PropertyRef Name="codigoSubasta" />
+            </Principal>
+            <Dependent Role="T_Oferta">
+              <PropertyRef Name="codigoSubasta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Oferta41">
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="1" />
+          <End Role="T_Oferta" Type="Self.T_Oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Principal>
+            <Dependent Role="T_Oferta">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Pago46">
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="1" />
+          <End Role="T_Pago" Type="Self.T_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Principal>
+            <Dependent Role="T_Pago">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PagoDetalle48">
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="0..1" />
+          <End Role="T_PagoDetalle" Type="Self.T_PagoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Principal>
+            <Dependent Role="T_PagoDetalle">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PagoDetalle50">
+          <End Role="T_Pago" Type="Self.T_Pago" Multiplicity="1" />
+          <End Role="T_PagoDetalle" Type="Self.T_PagoDetalle" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_Pago">
+              <PropertyRef Name="codigoPago" />
+            </Principal>
+            <Dependent Role="T_PagoDetalle">
+              <PropertyRef Name="codigoPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PagoDetalle52">
+          <End Role="T_Concepto" Type="Self.T_Concepto" Multiplicity="1" />
+          <End Role="T_PagoDetalle" Type="Self.T_PagoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Concepto">
+              <PropertyRef Name="codigoConcepto" />
+            </Principal>
+            <Dependent Role="T_PagoDetalle">
+              <PropertyRef Name="codigoConcepto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Prestamo42">
+          <End Role="T_Prestatario" Type="Self.T_Prestatario" Multiplicity="1" />
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestatario">
+              <PropertyRef Name="codigoPrestatario" />
+            </Principal>
+            <Dependent Role="T_Prestamo">
+              <PropertyRef Name="codigoPrestatario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Prestamo45">
+          <End Role="T_SolicitudCredito" Type="Self.T_SolicitudCredito" Multiplicity="1" />
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SolicitudCredito">
+              <PropertyRef Name="codigoSolCredito" />
+            </Principal>
+            <Dependent Role="T_Prestamo">
+              <PropertyRef Name="codigoSolCredito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SolicitudAfiliacion39">
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="0..1" />
+          <End Role="T_SolicitudAfiliacion" Type="Self.T_SolicitudAfiliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Principal>
+            <Dependent Role="T_SolicitudAfiliacion">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SolicitudCredito43">
+          <End Role="T_Prestatario" Type="Self.T_Prestatario" Multiplicity="0..1" />
+          <End Role="T_SolicitudCredito" Type="Self.T_SolicitudCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestatario">
+              <PropertyRef Name="codigoPrestatario" />
+            </Principal>
+            <Dependent Role="T_SolicitudCredito">
+              <PropertyRef Name="codigoPrestatario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Subasata38">
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="0..1" />
+          <End Role="T_Subasata" Type="Self.T_Subasata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestamo">
+              <PropertyRef Name="codigoPrestamo" />
+            </Principal>
+            <Dependent Role="T_Subasata">
+              <PropertyRef Name="codigoPrestamo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Subasata44">
+          <End Role="T_SolicitudCredito" Type="Self.T_SolicitudCredito" Multiplicity="1" />
+          <End Role="T_Subasata" Type="Self.T_Subasata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SolicitudCredito">
+              <PropertyRef Name="codigoSolCredito" />
+            </Principal>
+            <Dependent Role="T_Subasata">
+              <PropertyRef Name="codigoSolCredito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Transaccion47">
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="0..1" />
+          <End Role="T_Transaccion" Type="Self.T_Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Principal>
+            <Dependent Role="T_Transaccion">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Transaccion49">
+          <End Role="T_Cuenta" Type="Self.T_Cuenta" Multiplicity="1" />
+          <End Role="T_Transaccion" Type="Self.T_Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuenta">
+              <PropertyRef Name="codigoCuenta" />
+            </Principal>
+            <Dependent Role="T_Transaccion">
+              <PropertyRef Name="codigoCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Usuario51">
+          <End Role="T_Perfil" Type="Self.T_Perfil" Multiplicity="1" />
+          <End Role="T_Usuario" Type="Self.T_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Perfil">
+              <PropertyRef Name="codigoPerfil" />
+            </Principal>
+            <Dependent Role="T_Usuario">
+              <PropertyRef Name="codigoPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ValentineModelStoreContainer">
+          <EntitySet Name="T_Concepto" EntityType="Self.T_Concepto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Cuenta" EntityType="Self.T_Cuenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Cuota" EntityType="Self.T_Cuota" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Inversor" EntityType="Self.T_Inversor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Oferta" EntityType="Self.T_Oferta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Pago" EntityType="Self.T_Pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_PagoDetalle" EntityType="Self.T_PagoDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Perfil" EntityType="Self.T_Perfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Prestamo" EntityType="Self.T_Prestamo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Prestatario" EntityType="Self.T_Prestatario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Solicitante" EntityType="Self.T_Solicitante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SolicitudAfiliacion" EntityType="Self.T_SolicitudAfiliacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SolicitudCredito" EntityType="Self.T_SolicitudCredito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Subasata" EntityType="Self.T_Subasata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Transaccion" EntityType="Self.T_Transaccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Usuario" EntityType="Self.T_Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_T_Cuenta40" Association="Self.FK_T_Cuenta40">
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+            <End Role="T_Cuenta" EntitySet="T_Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Cuota37" Association="Self.FK_T_Cuota37">
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Inversor53" Association="Self.FK_T_Inversor53">
+            <End Role="T_Prestatario" EntitySet="T_Prestatario" />
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Oferta36" Association="Self.FK_T_Oferta36">
+            <End Role="T_Subasata" EntitySet="T_Subasata" />
+            <End Role="T_Oferta" EntitySet="T_Oferta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Oferta41" Association="Self.FK_T_Oferta41">
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+            <End Role="T_Oferta" EntitySet="T_Oferta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Pago46" Association="Self.FK_T_Pago46">
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+            <End Role="T_Pago" EntitySet="T_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PagoDetalle48" Association="Self.FK_T_PagoDetalle48">
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+            <End Role="T_PagoDetalle" EntitySet="T_PagoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PagoDetalle50" Association="Self.FK_T_PagoDetalle50">
+            <End Role="T_Pago" EntitySet="T_Pago" />
+            <End Role="T_PagoDetalle" EntitySet="T_PagoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PagoDetalle52" Association="Self.FK_T_PagoDetalle52">
+            <End Role="T_Concepto" EntitySet="T_Concepto" />
+            <End Role="T_PagoDetalle" EntitySet="T_PagoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Prestamo42" Association="Self.FK_T_Prestamo42">
+            <End Role="T_Prestatario" EntitySet="T_Prestatario" />
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Prestamo45" Association="Self.FK_T_Prestamo45">
+            <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SolicitudAfiliacion39" Association="Self.FK_T_SolicitudAfiliacion39">
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+            <End Role="T_SolicitudAfiliacion" EntitySet="T_SolicitudAfiliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SolicitudCredito43" Association="Self.FK_T_SolicitudCredito43">
+            <End Role="T_Prestatario" EntitySet="T_Prestatario" />
+            <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Subasata38" Association="Self.FK_T_Subasata38">
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+            <End Role="T_Subasata" EntitySet="T_Subasata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Subasata44" Association="Self.FK_T_Subasata44">
+            <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
+            <End Role="T_Subasata" EntitySet="T_Subasata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Transaccion47" Association="Self.FK_T_Transaccion47">
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+            <End Role="T_Transaccion" EntitySet="T_Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Transaccion49" Association="Self.FK_T_Transaccion49">
+            <End Role="T_Cuenta" EntitySet="T_Cuenta" />
+            <End Role="T_Transaccion" EntitySet="T_Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Usuario51" Association="Self.FK_T_Usuario51">
+            <End Role="T_Perfil" EntitySet="T_Perfil" />
+            <End Role="T_Usuario" EntitySet="T_Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ValentineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_Concepto">
+          <Key>
+            <PropertyRef Name="codigoConcepto" />
+          </Key>
+          <Property Name="codigoConcepto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreConcepto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_PagoDetalle" Relationship="Self.FK_T_PagoDetalle52" FromRole="T_Concepto" ToRole="T_PagoDetalle" />
+        </EntityType>
+        <EntityType Name="T_Cuenta">
+          <Key>
+            <PropertyRef Name="codigoCuenta" />
+          </Key>
+          <Property Name="codigoCuenta" Type="Int16" Nullable="false" />
+          <Property Name="fechaApertura" Type="Int16" Nullable="false" />
+          <Property Name="moneda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="saldo" Type="Double" Nullable="false" />
+          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_Cuenta40" FromRole="T_Cuenta" ToRole="T_Inversor" />
+          <NavigationProperty Name="T_Transaccion" Relationship="Self.FK_T_Transaccion49" FromRole="T_Cuenta" ToRole="T_Transaccion" />
+        </EntityType>
+        <EntityType Name="T_Cuota">
+          <Key>
+            <PropertyRef Name="codigoCuota" />
+            <PropertyRef Name="codigoPrestamo" />
+          </Key>
+          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaPago" Type="Int16" Nullable="false" />
+          <Property Name="monto" Type="Double" Nullable="false" />
+          <Property Name="fechaVencimiento" Type="Int16" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Cuota37" FromRole="T_Cuota" ToRole="T_Prestamo" />
+          <NavigationProperty Name="T_Pago" Relationship="Self.FK_T_Pago46" FromRole="T_Cuota" ToRole="T_Pago" />
+          <NavigationProperty Name="T_PagoDetalle" Relationship="Self.FK_T_PagoDetalle48" FromRole="T_Cuota" ToRole="T_PagoDetalle" />
+          <NavigationProperty Name="T_Transaccion" Relationship="Self.FK_T_Transaccion47" FromRole="T_Cuota" ToRole="T_Transaccion" />
+        </EntityType>
+        <EntityType Name="T_Inversor">
+          <Key>
+            <PropertyRef Name="codigoInversor" />
+            <PropertyRef Name="codigoPrestatario" />
+          </Key>
+          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombresInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidosInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
+          <Property Name="paisResidencia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modoInversion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conContratoMandato" Type="Double" Nullable="false" />
+          <Property Name="comisionCobrada" Type="Double" Nullable="false" />
+          <Property Name="rentabilidadMinima" Type="Double" Nullable="false" />
+          <Property Name="rentabilidadMaxima" Type="Double" Nullable="false" />
+          <Property Name="ofertaMinima" Type="Double" Nullable="false" />
+          <Property Name="ofertaMaxima" Type="Double" Nullable="false" />
+          <Property Name="destinoCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="edadMinima" Type="Int32" Nullable="false" />
+          <Property Name="edadMaxima" Type="Int32" Nullable="false" />
+          <Property Name="fechaIngreso" Type="Int16" Nullable="false" />
+          <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="distrito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provincia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="departamento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="areaActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rubroActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="esPEP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInterbancario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Cuenta" Relationship="Self.FK_T_Cuenta40" FromRole="T_Inversor" ToRole="T_Cuenta" />
+          <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_Inversor53" FromRole="T_Inversor" ToRole="T_Prestatario" />
+          <NavigationProperty Name="T_Oferta" Relationship="Self.FK_T_Oferta41" FromRole="T_Inversor" ToRole="T_Oferta" />
+          <NavigationProperty Name="T_SolicitudAfiliacion" Relationship="Self.FK_T_SolicitudAfiliacion39" FromRole="T_Inversor" ToRole="T_SolicitudAfiliacion" />
+        </EntityType>
+        <EntityType Name="T_Oferta">
+          <Key>
+            <PropertyRef Name="codigoOferta" />
+            <PropertyRef Name="codigoSubasta" />
+          </Key>
+          <Property Name="codigoOferta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="montoOfertado" Type="Double" Nullable="false" />
+          <Property Name="teaOfertada" Type="Double" Nullable="false" />
+          <Property Name="fecha" Type="Int16" Nullable="false" />
+          <Property Name="ofertaAdmitida" Type="Boolean" Nullable="false" />
+          <Property Name="codigoSubasta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_Oferta41" FromRole="T_Oferta" ToRole="T_Inversor" />
+          <NavigationProperty Name="T_Subasata" Relationship="Self.FK_T_Oferta36" FromRole="T_Oferta" ToRole="T_Subasata" />
+        </EntityType>
+        <EntityType Name="T_Pago">
+          <Key>
+            <PropertyRef Name="codigoPago" />
+          </Key>
+          <Property Name="codigoPago" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaPago" Type="Int16" Nullable="false" />
+          <Property Name="fechaProceso" Type="Int16" Nullable="false" />
+          <Property Name="montoPagado" Type="Double" Nullable="false" />
+          <Property Name="tipoOperacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ctacteOrigen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fueProcesado" Type="Boolean" Nullable="false" />
+          <Property Name="numeroCuota" Type="Int32" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Pago46" FromRole="T_Pago" ToRole="T_Cuota" />
+          <NavigationProperty Name="T_PagoDetalle" Relationship="Self.FK_T_PagoDetalle50" FromRole="T_Pago" ToRole="T_PagoDetalle" />
+        </EntityType>
+        <EntityType Name="T_PagoDetalle">
+          <Key>
+            <PropertyRef Name="codigoPago" />
+          </Key>
+          <Property Name="montoCuota" Type="Double" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoPago" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoConcepto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Concepto" Relationship="Self.FK_T_PagoDetalle52" FromRole="T_PagoDetalle" ToRole="T_Concepto" />
+          <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_PagoDetalle48" FromRole="T_PagoDetalle" ToRole="T_Cuota" />
+          <NavigationProperty Name="T_Pago" Relationship="Self.FK_T_PagoDetalle50" FromRole="T_PagoDetalle" ToRole="T_Pago" />
+        </EntityType>
+        <EntityType Name="T_Perfil">
+          <Key>
+            <PropertyRef Name="codigoPerfil" />
+          </Key>
+          <Property Name="codigoPerfil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Usuario" Relationship="Self.FK_T_Usuario51" FromRole="T_Perfil" ToRole="T_Usuario" />
+        </EntityType>
+        <EntityType Name="T_Prestamo">
+          <Key>
+            <PropertyRef Name="codigoPrestamo" />
+          </Key>
+          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="montoTransferido" Type="Double" Nullable="false" />
+          <Property Name="tea" Type="Double" Nullable="false" />
+          <Property Name="plazo" Type="Int32" Nullable="false" />
+          <Property Name="conContratoPrestamo" Type="Boolean" Nullable="false" />
+          <Property Name="fechaFormalizacion" Type="Int16" Nullable="false" />
+          <Property Name="fechaDesembolso" Type="Int16" Nullable="false" />
+          <Property Name="vigente" Type="Double" Nullable="false" />
+          <Property Name="numeroInstruccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cuentaOrigen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cuentaDesting" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoOperacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaOperacion" Type="Int16" Nullable="false" />
+          <Property Name="numeroTransferencia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoSolCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Cuota37" FromRole="T_Prestamo" ToRole="T_Cuota" />
+          <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_Prestamo42" FromRole="T_Prestamo" ToRole="T_Prestatario" />
+          <NavigationProperty Name="T_SolicitudCredito" Relationship="Self.FK_T_Prestamo45" FromRole="T_Prestamo" ToRole="T_SolicitudCredito" />
+          <NavigationProperty Name="T_Subasata" Relationship="Self.FK_T_Subasata38" FromRole="T_Prestamo" ToRole="T_Subasata" />
+        </EntityType>
+        <EntityType Name="T_Prestatario">
+          <Key>
+            <PropertyRef Name="codigoPrestatario" />
+          </Key>
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombresPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidosPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ultimaEvaluacion" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_Inversor53" FromRole="T_Prestatario" ToRole="T_Inversor" />
+          <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Prestamo42" FromRole="T_Prestatario" ToRole="T_Prestamo" />
+          <NavigationProperty Name="T_SolicitudCredito" Relationship="Self.FK_T_SolicitudCredito43" FromRole="T_Prestatario" ToRole="T_SolicitudCredito" />
+        </EntityType>
+        <EntityType Name="T_Solicitante">
+          <Key>
+            <PropertyRef Name="codigoSolicitante" />
+          </Key>
+          <Property Name="codigoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroDni" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="docSustentatorio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lugarNacimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombrePadre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreMadre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatura" Type="Double" Nullable="false" />
+          <Property Name="sexo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estadoCivil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gradoInstruccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaEmision" Type="Int16" Nullable="false" />
+          <Property Name="restricciones" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaInscripcion" Type="Int16" Nullable="false" />
+          <Property Name="constanciaVotacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ubigeoDomicilio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaConsulta" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SolicitudAfiliacion">
+          <Key>
+            <PropertyRef Name="codigoSolAfiliacion" />
+          </Key>
+          <Property Name="codigoSolAfiliacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombresInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidosInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
+          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="paisResidencia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="distrito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provincia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="departamento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="areaActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rubroActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="esPEP" Type="Boolean" Nullable="false" />
+          <Property Name="codigoInterbancario" Type="Int16" Nullable="false" />
+          <Property Name="clave" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaPresentacion" Type="Int16" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_SolicitudAfiliacion39" FromRole="T_SolicitudAfiliacion" ToRole="T_Inversor" />
+        </EntityType>
+        <EntityType Name="T_SolicitudCredito">
+          <Key>
+            <PropertyRef Name="codigoSolCredito" />
+          </Key>
+          <Property Name="codigoSolCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidosSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="digtitoVerificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
+          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gradoInstruccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estadoCivil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ingresoMensual" Type="Double" Nullable="false" />
+          <Property Name="direccionSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="distritoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provinciaSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dptoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="paisSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="areaActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ocupacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lugarTrabajo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="destinoCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroDocConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="montoSolicitado" Type="Double" Nullable="false" />
+          <Property Name="detalleMotivo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="esPEP" Type="Double" Nullable="false" />
+          <Property Name="cargoPEP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoCuenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreEntidad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInterbancario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="seguroDesgravamen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="plazoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dniValido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ingresoAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sobreEndeudado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conyugeAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="creditoActual" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="historialCrediticioAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="perfilSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="teaAsignada" Type="Double" Nullable="false" />
+          <Property Name="puntuacionBuro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="resultadoEvaluacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Prestamo45" FromRole="T_SolicitudCredito" ToRole="T_Prestamo" />
+          <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_SolicitudCredito43" FromRole="T_SolicitudCredito" ToRole="T_Prestatario" />
+          <NavigationProperty Name="T_Subasata" Relationship="Self.FK_T_Subasata44" FromRole="T_SolicitudCredito" ToRole="T_Subasata" />
+        </EntityType>
+        <EntityType Name="T_Subasata">
+          <Key>
+            <PropertyRef Name="codigoSubasta" />
+          </Key>
+          <Property Name="codigoSubasta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaInicio" Type="Int16" Nullable="false" />
+          <Property Name="fechaTermino" Type="Int16" Nullable="false" />
+          <Property Name="montoRecaudado" Type="Double" Nullable="false" />
+          <Property Name="fechaCorreoResultado" Type="Int16" Nullable="false" />
+          <Property Name="fechaAceptacion" Type="Int16" Nullable="false" />
+          <Property Name="montoAceptado" Type="Double" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoSolCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Oferta" Relationship="Self.FK_T_Oferta36" FromRole="T_Subasata" ToRole="T_Oferta" />
+          <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Subasata38" FromRole="T_Subasata" ToRole="T_Prestamo" />
+          <NavigationProperty Name="T_SolicitudCredito" Relationship="Self.FK_T_Subasata44" FromRole="T_Subasata" ToRole="T_SolicitudCredito" />
+        </EntityType>
+        <EntityType Name="T_Transaccion">
+          <Key>
+            <PropertyRef Name="codigoTransaccion" />
+          </Key>
+          <Property Name="codigoTransaccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="Int16" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="importe" Type="Double" Nullable="false" />
+          <Property Name="balance" Type="Double" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoCuenta" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="T_Cuenta" Relationship="Self.FK_T_Transaccion49" FromRole="T_Transaccion" ToRole="T_Cuenta" />
+          <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Transaccion47" FromRole="T_Transaccion" ToRole="T_Cuota" />
+        </EntityType>
+        <EntityType Name="T_Usuario">
+          <Key>
+            <PropertyRef Name="codigoUsuario" />
+          </Key>
+          <Property Name="codigoUsuario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaAlta" Type="Int16" Nullable="false" />
+          <Property Name="usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="clave" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPerfil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="T_Perfil" Relationship="Self.FK_T_Usuario51" FromRole="T_Usuario" ToRole="T_Perfil" />
+        </EntityType>
+        <Association Name="FK_T_PagoDetalle52">
+          <End Role="T_Concepto" Type="Self.T_Concepto" Multiplicity="1" />
+          <End Role="T_PagoDetalle" Type="Self.T_PagoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Concepto">
+              <PropertyRef Name="codigoConcepto" />
+            </Principal>
+            <Dependent Role="T_PagoDetalle">
+              <PropertyRef Name="codigoConcepto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Cuenta40">
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="1" />
+          <End Role="T_Cuenta" Type="Self.T_Cuenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Principal>
+            <Dependent Role="T_Cuenta">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Transaccion49">
+          <End Role="T_Cuenta" Type="Self.T_Cuenta" Multiplicity="1" />
+          <End Role="T_Transaccion" Type="Self.T_Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuenta">
+              <PropertyRef Name="codigoCuenta" />
+            </Principal>
+            <Dependent Role="T_Transaccion">
+              <PropertyRef Name="codigoCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Cuota37">
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="1" />
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestamo">
+              <PropertyRef Name="codigoPrestamo" />
+            </Principal>
+            <Dependent Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Pago46">
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="1" />
+          <End Role="T_Pago" Type="Self.T_Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Principal>
+            <Dependent Role="T_Pago">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PagoDetalle48">
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="0..1" />
+          <End Role="T_PagoDetalle" Type="Self.T_PagoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Principal>
+            <Dependent Role="T_PagoDetalle">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Transaccion47">
+          <End Role="T_Cuota" Type="Self.T_Cuota" Multiplicity="0..1" />
+          <End Role="T_Transaccion" Type="Self.T_Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Cuota">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Principal>
+            <Dependent Role="T_Transaccion">
+              <PropertyRef Name="codigoPrestamo" />
+              <PropertyRef Name="codigoCuota" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Inversor53">
+          <End Role="T_Prestatario" Type="Self.T_Prestatario" Multiplicity="1" />
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestatario">
+              <PropertyRef Name="codigoPrestatario" />
+            </Principal>
+            <Dependent Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Oferta41">
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="1" />
+          <End Role="T_Oferta" Type="Self.T_Oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Principal>
+            <Dependent Role="T_Oferta">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SolicitudAfiliacion39">
+          <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="0..1" />
+          <End Role="T_SolicitudAfiliacion" Type="Self.T_SolicitudAfiliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inversor">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Principal>
+            <Dependent Role="T_SolicitudAfiliacion">
+              <PropertyRef Name="codigoPrestatario" />
+              <PropertyRef Name="codigoInversor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Oferta36">
+          <End Role="T_Subasata" Type="Self.T_Subasata" Multiplicity="1" />
+          <End Role="T_Oferta" Type="Self.T_Oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Subasata">
+              <PropertyRef Name="codigoSubasta" />
+            </Principal>
+            <Dependent Role="T_Oferta">
+              <PropertyRef Name="codigoSubasta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PagoDetalle50">
+          <End Role="T_Pago" Type="Self.T_Pago" Multiplicity="1" />
+          <End Role="T_PagoDetalle" Type="Self.T_PagoDetalle" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_Pago">
+              <PropertyRef Name="codigoPago" />
+            </Principal>
+            <Dependent Role="T_PagoDetalle">
+              <PropertyRef Name="codigoPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Usuario51">
+          <End Role="T_Perfil" Type="Self.T_Perfil" Multiplicity="1" />
+          <End Role="T_Usuario" Type="Self.T_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Perfil">
+              <PropertyRef Name="codigoPerfil" />
+            </Principal>
+            <Dependent Role="T_Usuario">
+              <PropertyRef Name="codigoPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Prestamo42">
+          <End Role="T_Prestatario" Type="Self.T_Prestatario" Multiplicity="1" />
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestatario">
+              <PropertyRef Name="codigoPrestatario" />
+            </Principal>
+            <Dependent Role="T_Prestamo">
+              <PropertyRef Name="codigoPrestatario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Prestamo45">
+          <End Role="T_SolicitudCredito" Type="Self.T_SolicitudCredito" Multiplicity="1" />
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SolicitudCredito">
+              <PropertyRef Name="codigoSolCredito" />
+            </Principal>
+            <Dependent Role="T_Prestamo">
+              <PropertyRef Name="codigoSolCredito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Subasata38">
+          <End Role="T_Prestamo" Type="Self.T_Prestamo" Multiplicity="0..1" />
+          <End Role="T_Subasata" Type="Self.T_Subasata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestamo">
+              <PropertyRef Name="codigoPrestamo" />
+            </Principal>
+            <Dependent Role="T_Subasata">
+              <PropertyRef Name="codigoPrestamo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SolicitudCredito43">
+          <End Role="T_Prestatario" Type="Self.T_Prestatario" Multiplicity="0..1" />
+          <End Role="T_SolicitudCredito" Type="Self.T_SolicitudCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Prestatario">
+              <PropertyRef Name="codigoPrestatario" />
+            </Principal>
+            <Dependent Role="T_SolicitudCredito">
+              <PropertyRef Name="codigoPrestatario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Subasata44">
+          <End Role="T_SolicitudCredito" Type="Self.T_SolicitudCredito" Multiplicity="1" />
+          <End Role="T_Subasata" Type="Self.T_Subasata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SolicitudCredito">
+              <PropertyRef Name="codigoSolCredito" />
+            </Principal>
+            <Dependent Role="T_Subasata">
+              <PropertyRef Name="codigoSolCredito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ValentineEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Concepto" EntityType="Self.T_Concepto" />
+          <EntitySet Name="T_Cuenta" EntityType="Self.T_Cuenta" />
+          <EntitySet Name="T_Cuota" EntityType="Self.T_Cuota" />
+          <EntitySet Name="T_Inversor" EntityType="Self.T_Inversor" />
+          <EntitySet Name="T_Oferta" EntityType="Self.T_Oferta" />
+          <EntitySet Name="T_Pago" EntityType="Self.T_Pago" />
+          <EntitySet Name="T_PagoDetalle" EntityType="Self.T_PagoDetalle" />
+          <EntitySet Name="T_Perfil" EntityType="Self.T_Perfil" />
+          <EntitySet Name="T_Prestamo" EntityType="Self.T_Prestamo" />
+          <EntitySet Name="T_Prestatario" EntityType="Self.T_Prestatario" />
+          <EntitySet Name="T_Solicitante" EntityType="Self.T_Solicitante" />
+          <EntitySet Name="T_SolicitudAfiliacion" EntityType="Self.T_SolicitudAfiliacion" />
+          <EntitySet Name="T_SolicitudCredito" EntityType="Self.T_SolicitudCredito" />
+          <EntitySet Name="T_Subasata" EntityType="Self.T_Subasata" />
+          <EntitySet Name="T_Transaccion" EntityType="Self.T_Transaccion" />
+          <EntitySet Name="T_Usuario" EntityType="Self.T_Usuario" />
+          <AssociationSet Name="FK_T_PagoDetalle52" Association="Self.FK_T_PagoDetalle52">
+            <End Role="T_Concepto" EntitySet="T_Concepto" />
+            <End Role="T_PagoDetalle" EntitySet="T_PagoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Cuenta40" Association="Self.FK_T_Cuenta40">
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+            <End Role="T_Cuenta" EntitySet="T_Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Transaccion49" Association="Self.FK_T_Transaccion49">
+            <End Role="T_Cuenta" EntitySet="T_Cuenta" />
+            <End Role="T_Transaccion" EntitySet="T_Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Cuota37" Association="Self.FK_T_Cuota37">
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Pago46" Association="Self.FK_T_Pago46">
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+            <End Role="T_Pago" EntitySet="T_Pago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PagoDetalle48" Association="Self.FK_T_PagoDetalle48">
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+            <End Role="T_PagoDetalle" EntitySet="T_PagoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Transaccion47" Association="Self.FK_T_Transaccion47">
+            <End Role="T_Cuota" EntitySet="T_Cuota" />
+            <End Role="T_Transaccion" EntitySet="T_Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Inversor53" Association="Self.FK_T_Inversor53">
+            <End Role="T_Prestatario" EntitySet="T_Prestatario" />
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Oferta41" Association="Self.FK_T_Oferta41">
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+            <End Role="T_Oferta" EntitySet="T_Oferta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SolicitudAfiliacion39" Association="Self.FK_T_SolicitudAfiliacion39">
+            <End Role="T_Inversor" EntitySet="T_Inversor" />
+            <End Role="T_SolicitudAfiliacion" EntitySet="T_SolicitudAfiliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Oferta36" Association="Self.FK_T_Oferta36">
+            <End Role="T_Subasata" EntitySet="T_Subasata" />
+            <End Role="T_Oferta" EntitySet="T_Oferta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PagoDetalle50" Association="Self.FK_T_PagoDetalle50">
+            <End Role="T_Pago" EntitySet="T_Pago" />
+            <End Role="T_PagoDetalle" EntitySet="T_PagoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Usuario51" Association="Self.FK_T_Usuario51">
+            <End Role="T_Perfil" EntitySet="T_Perfil" />
+            <End Role="T_Usuario" EntitySet="T_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Prestamo42" Association="Self.FK_T_Prestamo42">
+            <End Role="T_Prestatario" EntitySet="T_Prestatario" />
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Prestamo45" Association="Self.FK_T_Prestamo45">
+            <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Subasata38" Association="Self.FK_T_Subasata38">
+            <End Role="T_Prestamo" EntitySet="T_Prestamo" />
+            <End Role="T_Subasata" EntitySet="T_Subasata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SolicitudCredito43" Association="Self.FK_T_SolicitudCredito43">
+            <End Role="T_Prestatario" EntitySet="T_Prestatario" />
+            <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Subasata44" Association="Self.FK_T_Subasata44">
+            <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
+            <End Role="T_Subasata" EntitySet="T_Subasata" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ValentineModelStoreContainer" CdmEntityContainer="ValentineEntities">
+          <EntitySetMapping Name="T_Concepto">
+            <EntityTypeMapping TypeName="ValentineModel.T_Concepto">
+              <MappingFragment StoreEntitySet="T_Concepto">
+                <ScalarProperty Name="codigoConcepto" ColumnName="codigoConcepto" />
+                <ScalarProperty Name="nombreConcepto" ColumnName="nombreConcepto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Cuenta">
+            <EntityTypeMapping TypeName="ValentineModel.T_Cuenta">
+              <MappingFragment StoreEntitySet="T_Cuenta">
+                <ScalarProperty Name="codigoCuenta" ColumnName="codigoCuenta" />
+                <ScalarProperty Name="fechaApertura" ColumnName="fechaApertura" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="codigoInversor" ColumnName="codigoInversor" />
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Cuota">
+            <EntityTypeMapping TypeName="ValentineModel.T_Cuota">
+              <MappingFragment StoreEntitySet="T_Cuota">
+                <ScalarProperty Name="codigoCuota" ColumnName="codigoCuota" />
+                <ScalarProperty Name="numeroCuota" ColumnName="numeroCuota" />
+                <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="fechaVencimiento" ColumnName="fechaVencimiento" />
+                <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Inversor">
+            <EntityTypeMapping TypeName="ValentineModel.T_Inversor">
+              <MappingFragment StoreEntitySet="T_Inversor">
+                <ScalarProperty Name="codigoInversor" ColumnName="codigoInversor" />
+                <ScalarProperty Name="nombresInversor" ColumnName="nombresInversor" />
+                <ScalarProperty Name="apellidosInversor" ColumnName="apellidosInversor" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+                <ScalarProperty Name="modoInversion" ColumnName="modoInversion" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="conContratoMandato" ColumnName="conContratoMandato" />
+                <ScalarProperty Name="comisionCobrada" ColumnName="comisionCobrada" />
+                <ScalarProperty Name="rentabilidadMinima" ColumnName="rentabilidadMinima" />
+                <ScalarProperty Name="rentabilidadMaxima" ColumnName="rentabilidadMaxima" />
+                <ScalarProperty Name="ofertaMinima" ColumnName="ofertaMinima" />
+                <ScalarProperty Name="ofertaMaxima" ColumnName="ofertaMaxima" />
+                <ScalarProperty Name="destinoCredito" ColumnName="destinoCredito" />
+                <ScalarProperty Name="edadMinima" ColumnName="edadMinima" />
+                <ScalarProperty Name="edadMaxima" ColumnName="edadMaxima" />
+                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+                <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+                <ScalarProperty Name="numeroCelular" ColumnName="numeroCelular" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="distrito" ColumnName="distrito" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="areaActividad" ColumnName="areaActividad" />
+                <ScalarProperty Name="rubroActividad" ColumnName="rubroActividad" />
+                <ScalarProperty Name="esPEP" ColumnName="esPEP" />
+                <ScalarProperty Name="codigoInterbancario" ColumnName="codigoInterbancario" />
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Oferta">
+            <EntityTypeMapping TypeName="ValentineModel.T_Oferta">
+              <MappingFragment StoreEntitySet="T_Oferta">
+                <ScalarProperty Name="codigoOferta" ColumnName="codigoOferta" />
+                <ScalarProperty Name="montoOfertado" ColumnName="montoOfertado" />
+                <ScalarProperty Name="teaOfertada" ColumnName="teaOfertada" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="ofertaAdmitida" ColumnName="ofertaAdmitida" />
+                <ScalarProperty Name="codigoSubasta" ColumnName="codigoSubasta" />
+                <ScalarProperty Name="codigoInversor" ColumnName="codigoInversor" />
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Pago">
+            <EntityTypeMapping TypeName="ValentineModel.T_Pago">
+              <MappingFragment StoreEntitySet="T_Pago">
+                <ScalarProperty Name="codigoPago" ColumnName="codigoPago" />
+                <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+                <ScalarProperty Name="fechaProceso" ColumnName="fechaProceso" />
+                <ScalarProperty Name="montoPagado" ColumnName="montoPagado" />
+                <ScalarProperty Name="tipoOperacion" ColumnName="tipoOperacion" />
+                <ScalarProperty Name="ctacteOrigen" ColumnName="ctacteOrigen" />
+                <ScalarProperty Name="fueProcesado" ColumnName="fueProcesado" />
+                <ScalarProperty Name="numeroCuota" ColumnName="numeroCuota" />
+                <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
+                <ScalarProperty Name="codigoCuota" ColumnName="codigoCuota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PagoDetalle">
+            <EntityTypeMapping TypeName="ValentineModel.T_PagoDetalle">
+              <MappingFragment StoreEntitySet="T_PagoDetalle">
+                <ScalarProperty Name="montoCuota" ColumnName="montoCuota" />
+                <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
+                <ScalarProperty Name="codigoCuota" ColumnName="codigoCuota" />
+                <ScalarProperty Name="codigoPago" ColumnName="codigoPago" />
+                <ScalarProperty Name="codigoConcepto" ColumnName="codigoConcepto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Perfil">
+            <EntityTypeMapping TypeName="ValentineModel.T_Perfil">
+              <MappingFragment StoreEntitySet="T_Perfil">
+                <ScalarProperty Name="codigoPerfil" ColumnName="codigoPerfil" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Prestamo">
+            <EntityTypeMapping TypeName="ValentineModel.T_Prestamo">
+              <MappingFragment StoreEntitySet="T_Prestamo">
+                <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
+                <ScalarProperty Name="montoTransferido" ColumnName="montoTransferido" />
+                <ScalarProperty Name="tea" ColumnName="tea" />
+                <ScalarProperty Name="plazo" ColumnName="plazo" />
+                <ScalarProperty Name="conContratoPrestamo" ColumnName="conContratoPrestamo" />
+                <ScalarProperty Name="fechaFormalizacion" ColumnName="fechaFormalizacion" />
+                <ScalarProperty Name="fechaDesembolso" ColumnName="fechaDesembolso" />
+                <ScalarProperty Name="vigente" ColumnName="vigente" />
+                <ScalarProperty Name="numeroInstruccion" ColumnName="numeroInstruccion" />
+                <ScalarProperty Name="cuentaOrigen" ColumnName="cuentaOrigen" />
+                <ScalarProperty Name="cuentaDesting" ColumnName="cuentaDesting" />
+                <ScalarProperty Name="tipoOperacion" ColumnName="tipoOperacion" />
+                <ScalarProperty Name="fechaOperacion" ColumnName="fechaOperacion" />
+                <ScalarProperty Name="numeroTransferencia" ColumnName="numeroTransferencia" />
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+                <ScalarProperty Name="codigoSolCredito" ColumnName="codigoSolCredito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Prestatario">
+            <EntityTypeMapping TypeName="ValentineModel.T_Prestatario">
+              <MappingFragment StoreEntitySet="T_Prestatario">
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+                <ScalarProperty Name="nombresPrestatario" ColumnName="nombresPrestatario" />
+                <ScalarProperty Name="apellidosPrestatario" ColumnName="apellidosPrestatario" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+                <ScalarProperty Name="ultimaEvaluacion" ColumnName="ultimaEvaluacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Solicitante">
+            <EntityTypeMapping TypeName="ValentineModel.T_Solicitante">
+              <MappingFragment StoreEntitySet="T_Solicitante">
+                <ScalarProperty Name="codigoSolicitante" ColumnName="codigoSolicitante" />
+                <ScalarProperty Name="numeroDni" ColumnName="numeroDni" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="docSustentatorio" ColumnName="docSustentatorio" />
+                <ScalarProperty Name="lugarNacimiento" ColumnName="lugarNacimiento" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="nombrePadre" ColumnName="nombrePadre" />
+                <ScalarProperty Name="nombreMadre" ColumnName="nombreMadre" />
+                <ScalarProperty Name="estatura" ColumnName="estatura" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+                <ScalarProperty Name="gradoInstruccion" ColumnName="gradoInstruccion" />
+                <ScalarProperty Name="fechaEmision" ColumnName="fechaEmision" />
+                <ScalarProperty Name="restricciones" ColumnName="restricciones" />
+                <ScalarProperty Name="fechaInscripcion" ColumnName="fechaInscripcion" />
+                <ScalarProperty Name="constanciaVotacion" ColumnName="constanciaVotacion" />
+                <ScalarProperty Name="ubigeoDomicilio" ColumnName="ubigeoDomicilio" />
+                <ScalarProperty Name="fechaConsulta" ColumnName="fechaConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SolicitudAfiliacion">
+            <EntityTypeMapping TypeName="ValentineModel.T_SolicitudAfiliacion">
+              <MappingFragment StoreEntitySet="T_SolicitudAfiliacion">
+                <ScalarProperty Name="codigoSolAfiliacion" ColumnName="codigoSolAfiliacion" />
+                <ScalarProperty Name="nombresInversor" ColumnName="nombresInversor" />
+                <ScalarProperty Name="apellidosInversor" ColumnName="apellidosInversor" />
+                <ScalarProperty Name="numeroCelular" ColumnName="numeroCelular" />
+                <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+                <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="distrito" ColumnName="distrito" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="areaActividad" ColumnName="areaActividad" />
+                <ScalarProperty Name="rubroActividad" ColumnName="rubroActividad" />
+                <ScalarProperty Name="esPEP" ColumnName="esPEP" />
+                <ScalarProperty Name="codigoInterbancario" ColumnName="codigoInterbancario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="fechaPresentacion" ColumnName="fechaPresentacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="codigoInversor" ColumnName="codigoInversor" />
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SolicitudCredito">
+            <EntityTypeMapping TypeName="ValentineModel.T_SolicitudCredito">
+              <MappingFragment StoreEntitySet="T_SolicitudCredito">
+                <ScalarProperty Name="codigoSolCredito" ColumnName="codigoSolCredito" />
+                <ScalarProperty Name="nombreSolicitante" ColumnName="nombreSolicitante" />
+                <ScalarProperty Name="apellidosSolicitante" ColumnName="apellidosSolicitante" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+                <ScalarProperty Name="digtitoVerificacion" ColumnName="digtitoVerificacion" />
+                <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+                <ScalarProperty Name="numeroCelular" ColumnName="numeroCelular" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="gradoInstruccion" ColumnName="gradoInstruccion" />
+                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+                <ScalarProperty Name="ingresoMensual" ColumnName="ingresoMensual" />
+                <ScalarProperty Name="direccionSolicitante" ColumnName="direccionSolicitante" />
+                <ScalarProperty Name="distritoSolicitante" ColumnName="distritoSolicitante" />
+                <ScalarProperty Name="provinciaSolicitante" ColumnName="provinciaSolicitante" />
+                <ScalarProperty Name="dptoSolicitante" ColumnName="dptoSolicitante" />
+                <ScalarProperty Name="paisSolicitante" ColumnName="paisSolicitante" />
+                <ScalarProperty Name="areaActividad" ColumnName="areaActividad" />
+                <ScalarProperty Name="ocupacion" ColumnName="ocupacion" />
+                <ScalarProperty Name="lugarTrabajo" ColumnName="lugarTrabajo" />
+                <ScalarProperty Name="destinoCredito" ColumnName="destinoCredito" />
+                <ScalarProperty Name="nombreConyuge" ColumnName="nombreConyuge" />
+                <ScalarProperty Name="numeroDocConyuge" ColumnName="numeroDocConyuge" />
+                <ScalarProperty Name="montoSolicitado" ColumnName="montoSolicitado" />
+                <ScalarProperty Name="detalleMotivo" ColumnName="detalleMotivo" />
+                <ScalarProperty Name="esPEP" ColumnName="esPEP" />
+                <ScalarProperty Name="cargoPEP" ColumnName="cargoPEP" />
+                <ScalarProperty Name="tipoCuenta" ColumnName="tipoCuenta" />
+                <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+                <ScalarProperty Name="codigoInterbancario" ColumnName="codigoInterbancario" />
+                <ScalarProperty Name="seguroDesgravamen" ColumnName="seguroDesgravamen" />
+                <ScalarProperty Name="plazoPrestamo" ColumnName="plazoPrestamo" />
+                <ScalarProperty Name="dniValido" ColumnName="dniValido" />
+                <ScalarProperty Name="ingresoAcorde" ColumnName="ingresoAcorde" />
+                <ScalarProperty Name="sobreEndeudado" ColumnName="sobreEndeudado" />
+                <ScalarProperty Name="conyugeAcorde" ColumnName="conyugeAcorde" />
+                <ScalarProperty Name="creditoActual" ColumnName="creditoActual" />
+                <ScalarProperty Name="historialCrediticioAcorde" ColumnName="historialCrediticioAcorde" />
+                <ScalarProperty Name="perfilSolicitante" ColumnName="perfilSolicitante" />
+                <ScalarProperty Name="teaAsignada" ColumnName="teaAsignada" />
+                <ScalarProperty Name="puntuacionBuro" ColumnName="puntuacionBuro" />
+                <ScalarProperty Name="resultadoEvaluacion" ColumnName="resultadoEvaluacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Subasata">
+            <EntityTypeMapping TypeName="ValentineModel.T_Subasata">
+              <MappingFragment StoreEntitySet="T_Subasata">
+                <ScalarProperty Name="codigoSubasta" ColumnName="codigoSubasta" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaTermino" ColumnName="fechaTermino" />
+                <ScalarProperty Name="montoRecaudado" ColumnName="montoRecaudado" />
+                <ScalarProperty Name="fechaCorreoResultado" ColumnName="fechaCorreoResultado" />
+                <ScalarProperty Name="fechaAceptacion" ColumnName="fechaAceptacion" />
+                <ScalarProperty Name="montoAceptado" ColumnName="montoAceptado" />
+                <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
+                <ScalarProperty Name="codigoSolCredito" ColumnName="codigoSolCredito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Transaccion">
+            <EntityTypeMapping TypeName="ValentineModel.T_Transaccion">
+              <MappingFragment StoreEntitySet="T_Transaccion">
+                <ScalarProperty Name="codigoTransaccion" ColumnName="codigoTransaccion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
+                <ScalarProperty Name="codigoCuota" ColumnName="codigoCuota" />
+                <ScalarProperty Name="codigoCuenta" ColumnName="codigoCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Usuario">
+            <EntityTypeMapping TypeName="ValentineModel.T_Usuario">
+              <MappingFragment StoreEntitySet="T_Usuario">
+                <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+                <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="codigoPerfil" ColumnName="codigoPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
