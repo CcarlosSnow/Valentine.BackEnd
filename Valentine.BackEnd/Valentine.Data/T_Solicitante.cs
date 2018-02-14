@@ -14,7 +14,7 @@ namespace TestMultiplica.Data
     
     public partial class T_Solicitante
     {
-        public string codigoSolicitante { get; set; }
+        public int codigoSolicitante { get; set; }
         public string numeroDni { get; set; }
         public string apellidoPaterno { get; set; }
         public string apellidoMaterno { get; set; }

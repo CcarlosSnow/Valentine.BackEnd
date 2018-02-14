@@ -232,6 +232,22 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ProductsXMLController.cs" />
+    <Compile Include="Controllers\T_ConceptoController.cs" />
+    <Compile Include="Controllers\T_CuentaController.cs" />
+    <Compile Include="Controllers\T_CuotaController.cs" />
+    <Compile Include="Controllers\T_InversorController.cs" />
+    <Compile Include="Controllers\T_OfertaController.cs" />
+    <Compile Include="Controllers\T_PagoController.cs" />
+    <Compile Include="Controllers\T_PagoDetalleController.cs" />
+    <Compile Include="Controllers\T_PerfilController.cs" />
+    <Compile Include="Controllers\T_PrestamoController.cs" />
+    <Compile Include="Controllers\T_PrestatarioController.cs" />
+    <Compile Include="Controllers\T_SolicitanteController.cs" />
+    <Compile Include="Controllers\T_SolicitudAfiliacionController.cs" />
+    <Compile Include="Controllers\T_SolicitudCreditoController.cs" />
+    <Compile Include="Controllers\T_SubastaController.cs" />
+    <Compile Include="Controllers\T_TransaccionController.cs" />
+    <Compile Include="Controllers\T_UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,6 +309,22 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\T_Concepto\" />
+    <Folder Include="Views\T_Cuenta\" />
+    <Folder Include="Views\T_Cuota\" />
+    <Folder Include="Views\T_Inversor\" />
+    <Folder Include="Views\T_Oferta\" />
+    <Folder Include="Views\T_PagoDetalle\" />
+    <Folder Include="Views\T_Pago\" />
+    <Folder Include="Views\T_Perfil\" />
+    <Folder Include="Views\T_Prestamo\" />
+    <Folder Include="Views\T_Prestatario\" />
+    <Folder Include="Views\T_Solicitante\" />
+    <Folder Include="Views\T_SolicitudAfiliacion\" />
+    <Folder Include="Views\T_SolicitudCredito\" />
+    <Folder Include="Views\T_Subasta\" />
+    <Folder Include="Views\T_Transaccion\" />
+    <Folder Include="Views\T_Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

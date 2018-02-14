@@ -22,12 +22,12 @@ namespace TestMultiplica.Data
             this.T_Transaccion = new HashSet<T_Transaccion>();
         }
     
-        public string codigoCuota { get; set; }
+        public int codigoCuota { get; set; }
         public string numeroCuota { get; set; }
         public short fechaPago { get; set; }
         public double monto { get; set; }
         public short fechaVencimiento { get; set; }
-        public string codigoPrestamo { get; set; }
+        public int codigoPrestamo { get; set; }
     
         public virtual T_Prestamo T_Prestamo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

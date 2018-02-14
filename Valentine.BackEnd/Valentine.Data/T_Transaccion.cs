@@ -14,15 +14,15 @@ namespace TestMultiplica.Data
     
     public partial class T_Transaccion
     {
-        public string codigoTransaccion { get; set; }
+        public int codigoTransaccion { get; set; }
         public short fecha { get; set; }
         public string tipo { get; set; }
         public string descripcion { get; set; }
         public double importe { get; set; }
         public double balance { get; set; }
-        public string codigoPrestamo { get; set; }
-        public string codigoCuota { get; set; }
-        public short codigoCuenta { get; set; }
+        public Nullable<int> codigoPrestamo { get; set; }
+        public Nullable<int> codigoCuota { get; set; }
+        public int codigoCuenta { get; set; }
     
         public virtual T_Cuenta T_Cuenta { get; set; }
         public virtual T_Cuota T_Cuota { get; set; }

@@ -21,7 +21,7 @@ namespace TestMultiplica.Data
             this.T_Subasata = new HashSet<T_Subasata>();
         }
     
-        public string codigoSolCredito { get; set; }
+        public int codigoSolCredito { get; set; }
         public string nombreSolicitante { get; set; }
         public string apellidosSolicitante { get; set; }
         public string tipoDocumento { get; set; }
@@ -29,11 +29,11 @@ namespace TestMultiplica.Data
         public string digtitoVerificacion { get; set; }
         public string correoElectronico { get; set; }
         public string numeroCelular { get; set; }
-        public short fechaNacimiento { get; set; }
+        public Nullable<short> fechaNacimiento { get; set; }
         public string genero { get; set; }
         public string gradoInstruccion { get; set; }
         public string estadoCivil { get; set; }
-        public double ingresoMensual { get; set; }
+        public Nullable<double> ingresoMensual { get; set; }
         public string direccionSolicitante { get; set; }
         public string distritoSolicitante { get; set; }
         public string provinciaSolicitante { get; set; }
@@ -45,9 +45,9 @@ namespace TestMultiplica.Data
         public string destinoCredito { get; set; }
         public string nombreConyuge { get; set; }
         public string numeroDocConyuge { get; set; }
-        public double montoSolicitado { get; set; }
+        public Nullable<double> montoSolicitado { get; set; }
         public string detalleMotivo { get; set; }
-        public double esPEP { get; set; }
+        public Nullable<double> esPEP { get; set; }
         public string cargoPEP { get; set; }
         public string tipoCuenta { get; set; }
         public string nombreEntidad { get; set; }
@@ -61,11 +61,11 @@ namespace TestMultiplica.Data
         public string creditoActual { get; set; }
         public string historialCrediticioAcorde { get; set; }
         public string perfilSolicitante { get; set; }
-        public double teaAsignada { get; set; }
+        public Nullable<double> teaAsignada { get; set; }
         public string puntuacionBuro { get; set; }
         public string resultadoEvaluacion { get; set; }
         public string estado { get; set; }
-        public string codigoPrestatario { get; set; }
+        public Nullable<int> codigoPrestatario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Prestamo> T_Prestamo { get; set; }

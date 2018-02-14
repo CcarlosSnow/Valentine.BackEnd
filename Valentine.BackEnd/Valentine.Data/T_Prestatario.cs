@@ -22,7 +22,7 @@ namespace TestMultiplica.Data
             this.T_SolicitudCredito = new HashSet<T_SolicitudCredito>();
         }
     
-        public string codigoPrestatario { get; set; }
+        public int codigoPrestatario { get; set; }
         public string nombresPrestatario { get; set; }
         public string apellidosPrestatario { get; set; }
         public short fechaNacimiento { get; set; }

@@ -14,7 +14,7 @@ namespace TestMultiplica.Data
     
     public partial class T_SolicitudAfiliacion
     {
-        public string codigoSolAfiliacion { get; set; }
+        public int codigoSolAfiliacion { get; set; }
         public string nombresInversor { get; set; }
         public string apellidosInversor { get; set; }
         public string numeroCelular { get; set; }
@@ -36,8 +36,8 @@ namespace TestMultiplica.Data
         public string clave { get; set; }
         public short fechaPresentacion { get; set; }
         public string estado { get; set; }
-        public string codigoInversor { get; set; }
-        public string codigoPrestatario { get; set; }
+        public Nullable<int> codigoInversor { get; set; }
+        public int codigoPrestatario { get; set; }
     
         public virtual T_Inversor T_Inversor { get; set; }
     }

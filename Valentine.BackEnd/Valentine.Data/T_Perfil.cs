@@ -20,7 +20,7 @@ namespace TestMultiplica.Data
             this.T_Usuario = new HashSet<T_Usuario>();
         }
     
-        public string codigoPerfil { get; set; }
+        public int codigoPerfil { get; set; }
         public string nombre { get; set; }
         public string estado { get; set; }
     

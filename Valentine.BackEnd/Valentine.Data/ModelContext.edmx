@@ -9,38 +9,38 @@
           <Key>
             <PropertyRef Name="codigoConcepto" />
           </Key>
-          <Property Name="codigoConcepto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoConcepto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreConcepto" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Cuenta">
           <Key>
             <PropertyRef Name="codigoCuenta" />
           </Key>
-          <Property Name="codigoCuenta" Type="smallint" Nullable="false" />
+          <Property Name="codigoCuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fechaApertura" Type="smallint" Nullable="false" />
           <Property Name="moneda" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="saldo" Type="float" Nullable="false" />
-          <Property Name="codigoInversor" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInversor" Type="int" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Cuota">
           <Key>
             <PropertyRef Name="codigoCuota" />
             <PropertyRef Name="codigoPrestamo" />
           </Key>
-          <Property Name="codigoCuota" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoCuota" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="numeroCuota" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaPago" Type="smallint" Nullable="false" />
           <Property Name="monto" Type="float" Nullable="false" />
           <Property Name="fechaVencimiento" Type="smallint" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Inversor">
           <Key>
             <PropertyRef Name="codigoInversor" />
             <PropertyRef Name="codigoPrestatario" />
           </Key>
-          <Property Name="codigoInversor" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInversor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombresInversor" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="apellidosInversor" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
@@ -71,27 +71,27 @@
           <Property Name="rubroActividad" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="esPEP" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="codigoInterbancario" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Oferta">
           <Key>
             <PropertyRef Name="codigoOferta" />
             <PropertyRef Name="codigoSubasta" />
           </Key>
-          <Property Name="codigoOferta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoOferta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="montoOfertado" Type="float" Nullable="false" />
           <Property Name="teaOfertada" Type="float" Nullable="false" />
           <Property Name="fecha" Type="smallint" Nullable="false" />
           <Property Name="ofertaAdmitida" Type="bit" Nullable="false" />
-          <Property Name="codigoSubasta" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoInversor" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoSubasta" Type="int" Nullable="false" />
+          <Property Name="codigoInversor" Type="int" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Pago">
           <Key>
             <PropertyRef Name="codigoPago" />
           </Key>
-          <Property Name="codigoPago" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fechaPago" Type="smallint" Nullable="false" />
           <Property Name="fechaProceso" Type="smallint" Nullable="false" />
           <Property Name="montoPagado" Type="float" Nullable="false" />
@@ -99,24 +99,24 @@
           <Property Name="ctacteOrigen" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fueProcesado" Type="bit" Nullable="false" />
           <Property Name="numeroCuota" Type="int" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoCuota" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="int" Nullable="false" />
+          <Property Name="codigoCuota" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_PagoDetalle">
           <Key>
             <PropertyRef Name="codigoPago" />
           </Key>
           <Property Name="montoCuota" Type="float" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" />
-          <Property Name="codigoCuota" Type="varchar" MaxLength="255" />
-          <Property Name="codigoPago" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoConcepto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="int" />
+          <Property Name="codigoCuota" Type="int" />
+          <Property Name="codigoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoConcepto" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Perfil">
           <Key>
             <PropertyRef Name="codigoPerfil" />
           </Key>
-          <Property Name="codigoPerfil" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
@@ -124,7 +124,7 @@
           <Key>
             <PropertyRef Name="codigoPrestamo" />
           </Key>
-          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="montoTransferido" Type="float" Nullable="false" />
           <Property Name="tea" Type="float" Nullable="false" />
           <Property Name="plazo" Type="int" Nullable="false" />
@@ -138,14 +138,14 @@
           <Property Name="tipoOperacion" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaOperacion" Type="smallint" Nullable="false" />
           <Property Name="numeroTransferencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoSolCredito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="int" Nullable="false" />
+          <Property Name="codigoSolCredito" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Prestatario">
           <Key>
             <PropertyRef Name="codigoPrestatario" />
           </Key>
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombresPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="apellidosPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
@@ -157,7 +157,7 @@
           <Key>
             <PropertyRef Name="codigoSolicitante" />
           </Key>
-          <Property Name="codigoSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoSolicitante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="numeroDni" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="apellidoPaterno" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="apellidoMaterno" Type="varchar" MaxLength="255" Nullable="false" />
@@ -182,7 +182,7 @@
           <Key>
             <PropertyRef Name="codigoSolAfiliacion" />
           </Key>
-          <Property Name="codigoSolAfiliacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoSolAfiliacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombresInversor" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="apellidosInversor" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="numeroCelular" Type="varchar" MaxLength="255" Nullable="false" />
@@ -204,96 +204,96 @@
           <Property Name="clave" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaPresentacion" Type="smallint" Nullable="false" />
           <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoInversor" Type="varchar" MaxLength="255" />
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoInversor" Type="int" />
+          <Property Name="codigoPrestatario" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_SolicitudCredito">
           <Key>
             <PropertyRef Name="codigoSolCredito" />
           </Key>
-          <Property Name="codigoSolCredito" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="nombreSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="apellidosSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="numeroDocumento" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="digtitoVerificacion" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="correoElectronico" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="numeroCelular" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
-          <Property Name="genero" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="gradoInstruccion" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="estadoCivil" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ingresoMensual" Type="float" Nullable="false" />
-          <Property Name="direccionSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="distritoSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="provinciaSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="dptoSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="paisSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="areaActividad" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ocupacion" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="lugarTrabajo" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="destinoCredito" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="nombreConyuge" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="numeroDocConyuge" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="montoSolicitado" Type="float" Nullable="false" />
-          <Property Name="detalleMotivo" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="esPEP" Type="float" Nullable="false" />
-          <Property Name="cargoPEP" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="tipoCuenta" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="nombreEntidad" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoInterbancario" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="seguroDesgravamen" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="plazoPrestamo" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="dniValido" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ingresoAcorde" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="sobreEndeudado" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="conyugeAcorde" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="creditoActual" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="historialCrediticioAcorde" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="perfilSolicitante" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="teaAsignada" Type="float" Nullable="false" />
-          <Property Name="puntuacionBuro" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="resultadoEvaluacion" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="varchar" MaxLength="255" />
+          <Property Name="codigoSolCredito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="apellidosSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" />
+          <Property Name="numeroDocumento" Type="varchar" MaxLength="255" />
+          <Property Name="digtitoVerificacion" Type="varchar" MaxLength="255" />
+          <Property Name="correoElectronico" Type="varchar" MaxLength="255" />
+          <Property Name="numeroCelular" Type="varchar" MaxLength="255" />
+          <Property Name="fechaNacimiento" Type="smallint" />
+          <Property Name="genero" Type="varchar" MaxLength="255" />
+          <Property Name="gradoInstruccion" Type="varchar" MaxLength="255" />
+          <Property Name="estadoCivil" Type="varchar" MaxLength="255" />
+          <Property Name="ingresoMensual" Type="float" />
+          <Property Name="direccionSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="distritoSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="provinciaSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="dptoSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="paisSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="areaActividad" Type="varchar" MaxLength="255" />
+          <Property Name="ocupacion" Type="varchar" MaxLength="255" />
+          <Property Name="lugarTrabajo" Type="varchar" MaxLength="255" />
+          <Property Name="destinoCredito" Type="varchar" MaxLength="255" />
+          <Property Name="nombreConyuge" Type="varchar" MaxLength="255" />
+          <Property Name="numeroDocConyuge" Type="varchar" MaxLength="255" />
+          <Property Name="montoSolicitado" Type="float" />
+          <Property Name="detalleMotivo" Type="varchar" MaxLength="255" />
+          <Property Name="esPEP" Type="float" />
+          <Property Name="cargoPEP" Type="varchar" MaxLength="255" />
+          <Property Name="tipoCuenta" Type="varchar" MaxLength="255" />
+          <Property Name="nombreEntidad" Type="varchar" MaxLength="255" />
+          <Property Name="codigoInterbancario" Type="varchar" MaxLength="255" />
+          <Property Name="seguroDesgravamen" Type="varchar" MaxLength="255" />
+          <Property Name="plazoPrestamo" Type="varchar" MaxLength="255" />
+          <Property Name="dniValido" Type="varchar" MaxLength="255" />
+          <Property Name="ingresoAcorde" Type="varchar" MaxLength="255" />
+          <Property Name="sobreEndeudado" Type="varchar" MaxLength="255" />
+          <Property Name="conyugeAcorde" Type="varchar" MaxLength="255" />
+          <Property Name="creditoActual" Type="varchar" MaxLength="255" />
+          <Property Name="historialCrediticioAcorde" Type="varchar" MaxLength="255" />
+          <Property Name="perfilSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="teaAsignada" Type="float" />
+          <Property Name="puntuacionBuro" Type="varchar" MaxLength="255" />
+          <Property Name="resultadoEvaluacion" Type="varchar" MaxLength="255" />
+          <Property Name="estado" Type="varchar" MaxLength="255" />
+          <Property Name="codigoPrestatario" Type="int" />
         </EntityType>
         <EntityType Name="T_Subasata">
           <Key>
             <PropertyRef Name="codigoSubasta" />
           </Key>
-          <Property Name="codigoSubasta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoSubasta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fechaInicio" Type="smallint" Nullable="false" />
           <Property Name="fechaTermino" Type="smallint" Nullable="false" />
           <Property Name="montoRecaudado" Type="float" Nullable="false" />
           <Property Name="fechaCorreoResultado" Type="smallint" Nullable="false" />
           <Property Name="fechaAceptacion" Type="smallint" Nullable="false" />
           <Property Name="montoAceptado" Type="float" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" />
-          <Property Name="codigoSolCredito" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="int" />
+          <Property Name="codigoSolCredito" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Transaccion">
           <Key>
             <PropertyRef Name="codigoTransaccion" />
           </Key>
-          <Property Name="codigoTransaccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha" Type="smallint" Nullable="false" />
           <Property Name="tipo" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="importe" Type="float" Nullable="false" />
           <Property Name="balance" Type="float" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="varchar" MaxLength="255" />
-          <Property Name="codigoCuota" Type="varchar" MaxLength="255" />
-          <Property Name="codigoCuenta" Type="smallint" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="int" />
+          <Property Name="codigoCuota" Type="int" />
+          <Property Name="codigoCuenta" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="T_Usuario">
           <Key>
             <PropertyRef Name="codigoUsuario" />
           </Key>
-          <Property Name="codigoUsuario" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fechaAlta" Type="smallint" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="codigoPerfil" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigoPerfil" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_T_Cuenta40">
           <End Role="T_Inversor" Type="Self.T_Inversor" Multiplicity="1" />
@@ -622,7 +622,7 @@
           <Key>
             <PropertyRef Name="codigoConcepto" />
           </Key>
-          <Property Name="codigoConcepto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoConcepto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombreConcepto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="T_PagoDetalle" Relationship="Self.FK_T_PagoDetalle52" FromRole="T_Concepto" ToRole="T_PagoDetalle" />
         </EntityType>
@@ -630,12 +630,12 @@
           <Key>
             <PropertyRef Name="codigoCuenta" />
           </Key>
-          <Property Name="codigoCuenta" Type="Int16" Nullable="false" />
+          <Property Name="codigoCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fechaApertura" Type="Int16" Nullable="false" />
           <Property Name="moneda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="saldo" Type="Double" Nullable="false" />
-          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInversor" Type="Int32" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_Cuenta40" FromRole="T_Cuenta" ToRole="T_Inversor" />
           <NavigationProperty Name="T_Transaccion" Relationship="Self.FK_T_Transaccion49" FromRole="T_Cuenta" ToRole="T_Transaccion" />
         </EntityType>
@@ -644,12 +644,12 @@
             <PropertyRef Name="codigoCuota" />
             <PropertyRef Name="codigoPrestamo" />
           </Key>
-          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoCuota" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="numeroCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaPago" Type="Int16" Nullable="false" />
           <Property Name="monto" Type="Double" Nullable="false" />
           <Property Name="fechaVencimiento" Type="Int16" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Cuota37" FromRole="T_Cuota" ToRole="T_Prestamo" />
           <NavigationProperty Name="T_Pago" Relationship="Self.FK_T_Pago46" FromRole="T_Cuota" ToRole="T_Pago" />
           <NavigationProperty Name="T_PagoDetalle" Relationship="Self.FK_T_PagoDetalle48" FromRole="T_Cuota" ToRole="T_PagoDetalle" />
@@ -660,7 +660,7 @@
             <PropertyRef Name="codigoInversor" />
             <PropertyRef Name="codigoPrestatario" />
           </Key>
-          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInversor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombresInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidosInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
@@ -691,7 +691,7 @@
           <Property Name="rubroActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="esPEP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codigoInterbancario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Cuenta" Relationship="Self.FK_T_Cuenta40" FromRole="T_Inversor" ToRole="T_Cuenta" />
           <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_Inversor53" FromRole="T_Inversor" ToRole="T_Prestatario" />
           <NavigationProperty Name="T_Oferta" Relationship="Self.FK_T_Oferta41" FromRole="T_Inversor" ToRole="T_Oferta" />
@@ -702,14 +702,14 @@
             <PropertyRef Name="codigoOferta" />
             <PropertyRef Name="codigoSubasta" />
           </Key>
-          <Property Name="codigoOferta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoOferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="montoOfertado" Type="Double" Nullable="false" />
           <Property Name="teaOfertada" Type="Double" Nullable="false" />
           <Property Name="fecha" Type="Int16" Nullable="false" />
           <Property Name="ofertaAdmitida" Type="Boolean" Nullable="false" />
-          <Property Name="codigoSubasta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoSubasta" Type="Int32" Nullable="false" />
+          <Property Name="codigoInversor" Type="Int32" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_Oferta41" FromRole="T_Oferta" ToRole="T_Inversor" />
           <NavigationProperty Name="T_Subasata" Relationship="Self.FK_T_Oferta36" FromRole="T_Oferta" ToRole="T_Subasata" />
         </EntityType>
@@ -717,7 +717,7 @@
           <Key>
             <PropertyRef Name="codigoPago" />
           </Key>
-          <Property Name="codigoPago" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fechaPago" Type="Int16" Nullable="false" />
           <Property Name="fechaProceso" Type="Int16" Nullable="false" />
           <Property Name="montoPagado" Type="Double" Nullable="false" />
@@ -725,8 +725,8 @@
           <Property Name="ctacteOrigen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fueProcesado" Type="Boolean" Nullable="false" />
           <Property Name="numeroCuota" Type="Int32" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="Int32" Nullable="false" />
+          <Property Name="codigoCuota" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Pago46" FromRole="T_Pago" ToRole="T_Cuota" />
           <NavigationProperty Name="T_PagoDetalle" Relationship="Self.FK_T_PagoDetalle50" FromRole="T_Pago" ToRole="T_PagoDetalle" />
         </EntityType>
@@ -735,10 +735,10 @@
             <PropertyRef Name="codigoPago" />
           </Key>
           <Property Name="montoCuota" Type="Double" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="codigoPago" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoConcepto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="Int32" />
+          <Property Name="codigoCuota" Type="Int32" />
+          <Property Name="codigoPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoConcepto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Concepto" Relationship="Self.FK_T_PagoDetalle52" FromRole="T_PagoDetalle" ToRole="T_Concepto" />
           <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_PagoDetalle48" FromRole="T_PagoDetalle" ToRole="T_Cuota" />
           <NavigationProperty Name="T_Pago" Relationship="Self.FK_T_PagoDetalle50" FromRole="T_PagoDetalle" ToRole="T_Pago" />
@@ -747,7 +747,7 @@
           <Key>
             <PropertyRef Name="codigoPerfil" />
           </Key>
-          <Property Name="codigoPerfil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="T_Usuario" Relationship="Self.FK_T_Usuario51" FromRole="T_Perfil" ToRole="T_Usuario" />
@@ -756,7 +756,7 @@
           <Key>
             <PropertyRef Name="codigoPrestamo" />
           </Key>
-          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="montoTransferido" Type="Double" Nullable="false" />
           <Property Name="tea" Type="Double" Nullable="false" />
           <Property Name="plazo" Type="Int32" Nullable="false" />
@@ -770,8 +770,8 @@
           <Property Name="tipoOperacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaOperacion" Type="Int16" Nullable="false" />
           <Property Name="numeroTransferencia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoSolCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="Int32" Nullable="false" />
+          <Property Name="codigoSolCredito" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Cuota37" FromRole="T_Prestamo" ToRole="T_Cuota" />
           <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_Prestamo42" FromRole="T_Prestamo" ToRole="T_Prestatario" />
           <NavigationProperty Name="T_SolicitudCredito" Relationship="Self.FK_T_Prestamo45" FromRole="T_Prestamo" ToRole="T_SolicitudCredito" />
@@ -781,7 +781,7 @@
           <Key>
             <PropertyRef Name="codigoPrestatario" />
           </Key>
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestatario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombresPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidosPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
@@ -796,7 +796,7 @@
           <Key>
             <PropertyRef Name="codigoSolicitante" />
           </Key>
-          <Property Name="codigoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoSolicitante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="numeroDni" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidoPaterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidoMaterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -821,7 +821,7 @@
           <Key>
             <PropertyRef Name="codigoSolAfiliacion" />
           </Key>
-          <Property Name="codigoSolAfiliacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoSolAfiliacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombresInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidosInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -843,59 +843,59 @@
           <Property Name="clave" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaPresentacion" Type="Int16" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoInversor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoInversor" Type="Int32" />
+          <Property Name="codigoPrestatario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_SolicitudAfiliacion39" FromRole="T_SolicitudAfiliacion" ToRole="T_Inversor" />
         </EntityType>
         <EntityType Name="T_SolicitudCredito">
           <Key>
             <PropertyRef Name="codigoSolCredito" />
           </Key>
-          <Property Name="codigoSolCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombreSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellidosSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="digtitoVerificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
-          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="gradoInstruccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="estadoCivil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ingresoMensual" Type="Double" Nullable="false" />
-          <Property Name="direccionSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="distritoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="provinciaSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="dptoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="paisSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="areaActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ocupacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lugarTrabajo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="destinoCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombreConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="numeroDocConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="montoSolicitado" Type="Double" Nullable="false" />
-          <Property Name="detalleMotivo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="esPEP" Type="Double" Nullable="false" />
-          <Property Name="cargoPEP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tipoCuenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombreEntidad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoInterbancario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="seguroDesgravamen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="plazoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="dniValido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ingresoAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="sobreEndeudado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="conyugeAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="creditoActual" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="historialCrediticioAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="perfilSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="teaAsignada" Type="Double" Nullable="false" />
-          <Property Name="puntuacionBuro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="resultadoEvaluacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoSolCredito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="apellidosSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="digtitoVerificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="Int16" />
+          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="gradoInstruccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="estadoCivil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ingresoMensual" Type="Double" />
+          <Property Name="direccionSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="distritoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="provinciaSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dptoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="paisSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="areaActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ocupacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="lugarTrabajo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="destinoCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nombreConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="numeroDocConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="montoSolicitado" Type="Double" />
+          <Property Name="detalleMotivo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="esPEP" Type="Double" />
+          <Property Name="cargoPEP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipoCuenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nombreEntidad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoInterbancario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="seguroDesgravamen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="plazoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dniValido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ingresoAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sobreEndeudado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="conyugeAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="creditoActual" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="historialCrediticioAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="perfilSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="teaAsignada" Type="Double" />
+          <Property Name="puntuacionBuro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="resultadoEvaluacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="codigoPrestatario" Type="Int32" />
           <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Prestamo45" FromRole="T_SolicitudCredito" ToRole="T_Prestamo" />
           <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_SolicitudCredito43" FromRole="T_SolicitudCredito" ToRole="T_Prestatario" />
           <NavigationProperty Name="T_Subasata" Relationship="Self.FK_T_Subasata44" FromRole="T_SolicitudCredito" ToRole="T_Subasata" />
@@ -904,15 +904,15 @@
           <Key>
             <PropertyRef Name="codigoSubasta" />
           </Key>
-          <Property Name="codigoSubasta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoSubasta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fechaInicio" Type="Int16" Nullable="false" />
           <Property Name="fechaTermino" Type="Int16" Nullable="false" />
           <Property Name="montoRecaudado" Type="Double" Nullable="false" />
           <Property Name="fechaCorreoResultado" Type="Int16" Nullable="false" />
           <Property Name="fechaAceptacion" Type="Int16" Nullable="false" />
           <Property Name="montoAceptado" Type="Double" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="codigoSolCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="Int32" />
+          <Property Name="codigoSolCredito" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Oferta" Relationship="Self.FK_T_Oferta36" FromRole="T_Subasata" ToRole="T_Oferta" />
           <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Subasata38" FromRole="T_Subasata" ToRole="T_Prestamo" />
           <NavigationProperty Name="T_SolicitudCredito" Relationship="Self.FK_T_Subasata44" FromRole="T_Subasata" ToRole="T_SolicitudCredito" />
@@ -921,15 +921,15 @@
           <Key>
             <PropertyRef Name="codigoTransaccion" />
           </Key>
-          <Property Name="codigoTransaccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoTransaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha" Type="Int16" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="importe" Type="Double" Nullable="false" />
           <Property Name="balance" Type="Double" Nullable="false" />
-          <Property Name="codigoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="codigoCuota" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="codigoCuenta" Type="Int16" Nullable="false" />
+          <Property Name="codigoPrestamo" Type="Int32" />
+          <Property Name="codigoCuota" Type="Int32" />
+          <Property Name="codigoCuenta" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Cuenta" Relationship="Self.FK_T_Transaccion49" FromRole="T_Transaccion" ToRole="T_Cuenta" />
           <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Transaccion47" FromRole="T_Transaccion" ToRole="T_Cuota" />
         </EntityType>
@@ -937,11 +937,11 @@
           <Key>
             <PropertyRef Name="codigoUsuario" />
           </Key>
-          <Property Name="codigoUsuario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fechaAlta" Type="Int16" Nullable="false" />
           <Property Name="usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="clave" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="codigoPerfil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigoPerfil" Type="Int32" Nullable="false" />
           <NavigationProperty Name="T_Perfil" Relationship="Self.FK_T_Usuario51" FromRole="T_Usuario" ToRole="T_Perfil" />
         </EntityType>
         <Association Name="FK_T_PagoDetalle52">

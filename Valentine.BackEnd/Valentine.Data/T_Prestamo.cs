@@ -21,7 +21,7 @@ namespace TestMultiplica.Data
             this.T_Subasata = new HashSet<T_Subasata>();
         }
     
-        public string codigoPrestamo { get; set; }
+        public int codigoPrestamo { get; set; }
         public double montoTransferido { get; set; }
         public double tea { get; set; }
         public int plazo { get; set; }
@@ -35,8 +35,8 @@ namespace TestMultiplica.Data
         public string tipoOperacion { get; set; }
         public short fechaOperacion { get; set; }
         public string numeroTransferencia { get; set; }
-        public string codigoPrestatario { get; set; }
-        public string codigoSolCredito { get; set; }
+        public int codigoPrestatario { get; set; }
+        public int codigoSolCredito { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Cuota> T_Cuota { get; set; }

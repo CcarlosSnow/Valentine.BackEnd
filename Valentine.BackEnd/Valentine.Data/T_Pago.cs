@@ -14,7 +14,7 @@ namespace TestMultiplica.Data
     
     public partial class T_Pago
     {
-        public string codigoPago { get; set; }
+        public int codigoPago { get; set; }
         public short fechaPago { get; set; }
         public short fechaProceso { get; set; }
         public double montoPagado { get; set; }
@@ -22,8 +22,8 @@ namespace TestMultiplica.Data
         public string ctacteOrigen { get; set; }
         public bool fueProcesado { get; set; }
         public int numeroCuota { get; set; }
-        public string codigoPrestamo { get; set; }
-        public string codigoCuota { get; set; }
+        public int codigoPrestamo { get; set; }
+        public int codigoCuota { get; set; }
     
         public virtual T_Cuota T_Cuota { get; set; }
         public virtual T_PagoDetalle T_PagoDetalle { get; set; }

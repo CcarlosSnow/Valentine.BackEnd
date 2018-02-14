@@ -22,7 +22,7 @@ namespace TestMultiplica.Data
             this.T_SolicitudAfiliacion = new HashSet<T_SolicitudAfiliacion>();
         }
     
-        public string codigoInversor { get; set; }
+        public int codigoInversor { get; set; }
         public string nombresInversor { get; set; }
         public string apellidosInversor { get; set; }
         public short fechaNacimiento { get; set; }
@@ -53,7 +53,7 @@ namespace TestMultiplica.Data
         public string rubroActividad { get; set; }
         public string esPEP { get; set; }
         public string codigoInterbancario { get; set; }
-        public string codigoPrestatario { get; set; }
+        public int codigoPrestatario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Cuenta> T_Cuenta { get; set; }

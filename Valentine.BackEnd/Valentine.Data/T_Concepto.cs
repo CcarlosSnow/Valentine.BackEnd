@@ -20,7 +20,7 @@ namespace TestMultiplica.Data
             this.T_PagoDetalle = new HashSet<T_PagoDetalle>();
         }
     
-        public string codigoConcepto { get; set; }
+        public int codigoConcepto { get; set; }
         public string nombreConcepto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

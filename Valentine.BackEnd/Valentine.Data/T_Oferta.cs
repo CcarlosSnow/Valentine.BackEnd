@@ -14,14 +14,14 @@ namespace TestMultiplica.Data
     
     public partial class T_Oferta
     {
-        public string codigoOferta { get; set; }
+        public int codigoOferta { get; set; }
         public double montoOfertado { get; set; }
         public double teaOfertada { get; set; }
         public short fecha { get; set; }
         public bool ofertaAdmitida { get; set; }
-        public string codigoSubasta { get; set; }
-        public string codigoInversor { get; set; }
-        public string codigoPrestatario { get; set; }
+        public int codigoSubasta { get; set; }
+        public int codigoInversor { get; set; }
+        public int codigoPrestatario { get; set; }
     
         public virtual T_Inversor T_Inversor { get; set; }
         public virtual T_Subasata T_Subasata { get; set; }

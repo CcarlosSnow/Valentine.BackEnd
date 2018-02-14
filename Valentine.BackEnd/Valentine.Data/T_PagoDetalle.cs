@@ -15,10 +15,10 @@ namespace TestMultiplica.Data
     public partial class T_PagoDetalle
     {
         public double montoCuota { get; set; }
-        public string codigoPrestamo { get; set; }
-        public string codigoCuota { get; set; }
-        public string codigoPago { get; set; }
-        public string codigoConcepto { get; set; }
+        public Nullable<int> codigoPrestamo { get; set; }
+        public Nullable<int> codigoCuota { get; set; }
+        public int codigoPago { get; set; }
+        public int codigoConcepto { get; set; }
     
         public virtual T_Concepto T_Concepto { get; set; }
         public virtual T_Cuota T_Cuota { get; set; }

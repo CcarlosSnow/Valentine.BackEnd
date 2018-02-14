@@ -14,11 +14,11 @@ namespace TestMultiplica.Data
     
     public partial class T_Usuario
     {
-        public string codigoUsuario { get; set; }
+        public int codigoUsuario { get; set; }
         public short fechaAlta { get; set; }
         public string usuario { get; set; }
         public string clave { get; set; }
-        public string codigoPerfil { get; set; }
+        public int codigoPerfil { get; set; }
     
         public virtual T_Perfil T_Perfil { get; set; }
     }

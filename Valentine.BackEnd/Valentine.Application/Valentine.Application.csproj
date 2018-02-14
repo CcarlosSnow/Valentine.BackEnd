@@ -99,6 +99,38 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Product\Queries\FindProducts\" />
+    <Folder Include="T_Concepto\Commands\" />
+    <Folder Include="T_Concepto\Queries\" />
+    <Folder Include="T_Cuenta\Commands\" />
+    <Folder Include="T_Cuenta\Queries\" />
+    <Folder Include="T_Cuota\Commands\" />
+    <Folder Include="T_Cuota\Queries\" />
+    <Folder Include="T_Inversor\Commands\" />
+    <Folder Include="T_Inversor\Queries\" />
+    <Folder Include="T_Oferta\Commands\" />
+    <Folder Include="T_Oferta\Queries\" />
+    <Folder Include="T_PagoDetalle\Commands\" />
+    <Folder Include="T_PagoDetalle\Queries\" />
+    <Folder Include="T_Pago\Commands\" />
+    <Folder Include="T_Pago\Queries\" />
+    <Folder Include="T_Perfil\Commands\" />
+    <Folder Include="T_Perfil\Queries\" />
+    <Folder Include="T_Prestamo\Commands\" />
+    <Folder Include="T_Prestamo\Queries\" />
+    <Folder Include="T_Prestatario\Commands\" />
+    <Folder Include="T_Prestatario\Queries\" />
+    <Folder Include="T_Solicitante\Commands\" />
+    <Folder Include="T_Solicitante\Queries\" />
+    <Folder Include="T_SolicitudAfiliacion\Commands\" />
+    <Folder Include="T_SolicitudAfiliacion\Queries\" />
+    <Folder Include="T_SolicitudCredito\Commands\" />
+    <Folder Include="T_SolicitudCredito\Queries\" />
+    <Folder Include="T_Subasta\Commands\" />
+    <Folder Include="T_Subasta\Queries\" />
+    <Folder Include="T_Transaccion\Commands\" />
+    <Folder Include="T_Transaccion\Queries\" />
+    <Folder Include="T_Usuario\Commands\" />
+    <Folder Include="T_Usuario\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Valentine.Data\Valentine.Data.csproj">
