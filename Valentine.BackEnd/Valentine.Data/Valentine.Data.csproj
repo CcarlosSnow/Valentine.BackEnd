@@ -7,8 +7,8 @@
     <ProjectGuid>{68638D96-C786-4F48-A1A4-6D5DB98DCC94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestMultiplica.Data</RootNamespace>
-    <AssemblyName>TestMultiplica.Data</AssemblyName>
+    <RootNamespace>Valentine.Data</RootNamespace>
+    <AssemblyName>Valentine.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -84,6 +84,9 @@
       <DependentUpon>ModelContext.tt</DependentUpon>
     </Compile>
     <Compile Include="T_PagoDetalle.cs">
+      <DependentUpon>ModelContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Parametro.cs">
       <DependentUpon>ModelContext.tt</DependentUpon>
     </Compile>
     <Compile Include="T_Perfil.cs">

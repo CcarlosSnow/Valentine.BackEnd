@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace TestMultiplica.Services.Areas.HelpPage
+namespace Valentine.Services.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

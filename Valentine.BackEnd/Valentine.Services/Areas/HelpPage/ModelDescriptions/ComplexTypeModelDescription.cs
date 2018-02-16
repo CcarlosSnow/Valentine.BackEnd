@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace TestMultiplica.Services.Areas.HelpPage.ModelDescriptions
+namespace Valentine.Services.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

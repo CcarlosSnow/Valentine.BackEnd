@@ -1,6 +1,6 @@
 using System;
 
-namespace TestMultiplica.Services.Areas.HelpPage.ModelDescriptions
+namespace Valentine.Services.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

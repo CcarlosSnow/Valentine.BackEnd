@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestMultiplica.Data
+namespace Valentine.Data
 {
     using System;
     using System.Collections.Generic;
@@ -23,37 +23,41 @@ namespace TestMultiplica.Data
     
         public int codigoSolCredito { get; set; }
         public string nombreSolicitante { get; set; }
-        public string apellidosSolicitante { get; set; }
-        public string tipoDocumento { get; set; }
+        public string apellidoPaternoSolicitante { get; set; }
+        public string apellidoMaternoSolicitante { get; set; }
+        public Nullable<int> tipoDocumento { get; set; }
         public string numeroDocumento { get; set; }
-        public string digtitoVerificacion { get; set; }
+        public string digitoVerificacion { get; set; }
         public string correoElectronico { get; set; }
         public string numeroCelular { get; set; }
-        public Nullable<short> fechaNacimiento { get; set; }
-        public string genero { get; set; }
-        public string gradoInstruccion { get; set; }
-        public string estadoCivil { get; set; }
+        public string fechaNacimiento { get; set; }
+        public Nullable<int> genero { get; set; }
+        public Nullable<int> gradoInstruccion { get; set; }
+        public Nullable<int> estadoCivil { get; set; }
         public Nullable<double> ingresoMensual { get; set; }
         public string direccionSolicitante { get; set; }
-        public string distritoSolicitante { get; set; }
-        public string provinciaSolicitante { get; set; }
-        public string dptoSolicitante { get; set; }
-        public string paisSolicitante { get; set; }
-        public string areaActividad { get; set; }
-        public string ocupacion { get; set; }
+        public Nullable<int> distritoSolicitante { get; set; }
+        public Nullable<int> provinciaSolicitante { get; set; }
+        public Nullable<int> dptoSolicitante { get; set; }
+        public Nullable<int> paisSolicitante { get; set; }
+        public Nullable<int> areaActividad { get; set; }
+        public Nullable<int> ocupacion { get; set; }
         public string lugarTrabajo { get; set; }
         public string destinoCredito { get; set; }
         public string nombreConyuge { get; set; }
+        public string apellidoPaternoConyuge { get; set; }
+        public string apellidoMaternoConyuge { get; set; }
+        public Nullable<int> tipoDocumentoConyuge { get; set; }
         public string numeroDocConyuge { get; set; }
         public Nullable<double> montoSolicitado { get; set; }
         public string detalleMotivo { get; set; }
-        public Nullable<double> esPEP { get; set; }
+        public Nullable<bool> esPEP { get; set; }
         public string cargoPEP { get; set; }
-        public string tipoCuenta { get; set; }
-        public string nombreEntidad { get; set; }
+        public Nullable<int> tipoCuenta { get; set; }
+        public Nullable<int> nombreEntidad { get; set; }
         public string codigoInterbancario { get; set; }
         public string seguroDesgravamen { get; set; }
-        public string plazoPrestamo { get; set; }
+        public Nullable<int> plazoPrestamo { get; set; }
         public string dniValido { get; set; }
         public string ingresoAcorde { get; set; }
         public string sobreEndeudado { get; set; }
@@ -66,6 +70,7 @@ namespace TestMultiplica.Data
         public string resultadoEvaluacion { get; set; }
         public string estado { get; set; }
         public Nullable<int> codigoPrestatario { get; set; }
+        public string codigoPostal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Prestamo> T_Prestamo { get; set; }

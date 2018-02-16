@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestMultiplica.Data
+namespace Valentine.Data
 {
     using System;
     using System.Collections.Generic;
@@ -26,7 +26,7 @@ namespace TestMultiplica.Data
         public string nombresPrestatario { get; set; }
         public string apellidosPrestatario { get; set; }
         public short fechaNacimiento { get; set; }
-        public string tipoDocumento { get; set; }
+        public int tipoDocumento { get; set; }
         public string numeroDocumento { get; set; }
         public short ultimaEvaluacion { get; set; }
     

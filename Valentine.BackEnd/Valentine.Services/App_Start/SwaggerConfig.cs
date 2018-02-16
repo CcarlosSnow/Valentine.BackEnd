@@ -1,11 +1,11 @@
 using System.Web.Http;
 using WebActivatorEx;
-using TestMultiplica.Services;
+using Valentine.Services;
 using Swashbuckle.Application;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace TestMultiplica.Services
+namespace Valentine.Services
 {
     public class SwaggerConfig
     {
@@ -32,7 +32,7 @@ namespace TestMultiplica.Services
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "TestMultiplica.Services");
+                        c.SingleApiVersion("v1", "Valentine.Services");
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //

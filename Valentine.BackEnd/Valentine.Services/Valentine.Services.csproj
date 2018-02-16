@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestMultiplica.Services</RootNamespace>
-    <AssemblyName>TestMultiplica.Services</AssemblyName>
+    <RootNamespace>Valentine.Services</RootNamespace>
+    <AssemblyName>Valentine.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -227,11 +227,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\CategoriesXMLController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ProductsXMLController.cs" />
     <Compile Include="Controllers\T_ConceptoController.cs" />
     <Compile Include="Controllers\T_CuentaController.cs" />
     <Compile Include="Controllers\T_CuotaController.cs" />
@@ -309,22 +305,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\T_Concepto\" />
-    <Folder Include="Views\T_Cuenta\" />
-    <Folder Include="Views\T_Cuota\" />
-    <Folder Include="Views\T_Inversor\" />
-    <Folder Include="Views\T_Oferta\" />
-    <Folder Include="Views\T_PagoDetalle\" />
-    <Folder Include="Views\T_Pago\" />
-    <Folder Include="Views\T_Perfil\" />
-    <Folder Include="Views\T_Prestamo\" />
-    <Folder Include="Views\T_Prestatario\" />
-    <Folder Include="Views\T_Solicitante\" />
-    <Folder Include="Views\T_SolicitudAfiliacion\" />
-    <Folder Include="Views\T_SolicitudCredito\" />
-    <Folder Include="Views\T_Subasta\" />
-    <Folder Include="Views\T_Transaccion\" />
-    <Folder Include="Views\T_Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

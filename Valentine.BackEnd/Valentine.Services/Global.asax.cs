@@ -7,12 +7,12 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using TestMultiplica.Application.Infraestructure;
-using TestMultiplica.Util;
+using Valentine.Application.Infraestructure;
+using Valentine.Util;
 using Ninject;
-using TestMultiplica.Web.App_Start;
+using Valentine.Web.App_Start;
 
-namespace TestMultiplica.Services
+namespace Valentine.Services
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -30,8 +30,8 @@ namespace TestMultiplica.Services
                 cfg.AddProfile(new ApplicationProfile());
             });
 
-            var Util = NinjectWebCommon.Kernel.Get<IUtil>();
-            Util.GenerateXMLSeed();
+            //var Util = NinjectWebCommon.Kernel.Get<IUtil>();
+            //Util.GenerateXMLSeed();
         }
     }
 }

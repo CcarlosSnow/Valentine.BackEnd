@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using TestMultiplica.Services.Areas.HelpPage.ModelDescriptions;
+using Valentine.Services.Areas.HelpPage.ModelDescriptions;
 
-namespace TestMultiplica.Services.Areas.HelpPage.Models
+namespace Valentine.Services.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TestMultiplica.Services
+namespace Valentine.Services
 {
     public class BundleConfig
     {

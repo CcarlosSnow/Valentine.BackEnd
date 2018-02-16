@@ -112,6 +112,14 @@
           <Property Name="codigoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codigoConcepto" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="T_Parametro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Padre" Type="int" />
+        </EntityType>
         <EntityType Name="T_Perfil">
           <Key>
             <PropertyRef Name="codigoPerfil" />
@@ -149,7 +157,7 @@
           <Property Name="nombresPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="apellidosPrestatario" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaNacimiento" Type="smallint" Nullable="false" />
-          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tipoDocumento" Type="int" Nullable="false" />
           <Property Name="numeroDocumento" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="ultimaEvaluacion" Type="smallint" Nullable="false" />
         </EntityType>
@@ -213,37 +221,41 @@
           </Key>
           <Property Name="codigoSolCredito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="apellidosSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="tipoDocumento" Type="varchar" MaxLength="255" />
+          <Property Name="apellidoPaternoSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="apellidoMaternoSolicitante" Type="varchar" MaxLength="255" />
+          <Property Name="tipoDocumento" Type="int" />
           <Property Name="numeroDocumento" Type="varchar" MaxLength="255" />
-          <Property Name="digtitoVerificacion" Type="varchar" MaxLength="255" />
+          <Property Name="digitoVerificacion" Type="varchar" MaxLength="255" />
           <Property Name="correoElectronico" Type="varchar" MaxLength="255" />
           <Property Name="numeroCelular" Type="varchar" MaxLength="255" />
-          <Property Name="fechaNacimiento" Type="smallint" />
-          <Property Name="genero" Type="varchar" MaxLength="255" />
-          <Property Name="gradoInstruccion" Type="varchar" MaxLength="255" />
-          <Property Name="estadoCivil" Type="varchar" MaxLength="255" />
+          <Property Name="fechaNacimiento" Type="varchar" MaxLength="255" />
+          <Property Name="genero" Type="int" />
+          <Property Name="gradoInstruccion" Type="int" />
+          <Property Name="estadoCivil" Type="int" />
           <Property Name="ingresoMensual" Type="float" />
           <Property Name="direccionSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="distritoSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="provinciaSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="dptoSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="paisSolicitante" Type="varchar" MaxLength="255" />
-          <Property Name="areaActividad" Type="varchar" MaxLength="255" />
-          <Property Name="ocupacion" Type="varchar" MaxLength="255" />
+          <Property Name="distritoSolicitante" Type="int" />
+          <Property Name="provinciaSolicitante" Type="int" />
+          <Property Name="dptoSolicitante" Type="int" />
+          <Property Name="paisSolicitante" Type="int" />
+          <Property Name="areaActividad" Type="int" />
+          <Property Name="ocupacion" Type="int" />
           <Property Name="lugarTrabajo" Type="varchar" MaxLength="255" />
           <Property Name="destinoCredito" Type="varchar" MaxLength="255" />
           <Property Name="nombreConyuge" Type="varchar" MaxLength="255" />
+          <Property Name="apellidoPaternoConyuge" Type="varchar" MaxLength="255" />
+          <Property Name="apellidoMaternoConyuge" Type="varchar" MaxLength="255" />
+          <Property Name="tipoDocumentoConyuge" Type="int" />
           <Property Name="numeroDocConyuge" Type="varchar" MaxLength="255" />
           <Property Name="montoSolicitado" Type="float" />
           <Property Name="detalleMotivo" Type="varchar" MaxLength="255" />
-          <Property Name="esPEP" Type="float" />
+          <Property Name="esPEP" Type="bit" />
           <Property Name="cargoPEP" Type="varchar" MaxLength="255" />
-          <Property Name="tipoCuenta" Type="varchar" MaxLength="255" />
-          <Property Name="nombreEntidad" Type="varchar" MaxLength="255" />
+          <Property Name="tipoCuenta" Type="int" />
+          <Property Name="nombreEntidad" Type="int" />
           <Property Name="codigoInterbancario" Type="varchar" MaxLength="255" />
           <Property Name="seguroDesgravamen" Type="varchar" MaxLength="255" />
-          <Property Name="plazoPrestamo" Type="varchar" MaxLength="255" />
+          <Property Name="plazoPrestamo" Type="int" />
           <Property Name="dniValido" Type="varchar" MaxLength="255" />
           <Property Name="ingresoAcorde" Type="varchar" MaxLength="255" />
           <Property Name="sobreEndeudado" Type="varchar" MaxLength="255" />
@@ -256,6 +268,7 @@
           <Property Name="resultadoEvaluacion" Type="varchar" MaxLength="255" />
           <Property Name="estado" Type="varchar" MaxLength="255" />
           <Property Name="codigoPrestatario" Type="int" />
+          <Property Name="codigoPostal" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="T_Subasata">
           <Key>
@@ -531,6 +544,7 @@
           <EntitySet Name="T_Oferta" EntityType="Self.T_Oferta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Pago" EntityType="Self.T_Pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_PagoDetalle" EntityType="Self.T_PagoDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Parametro" EntityType="Self.T_Parametro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Perfil" EntityType="Self.T_Perfil" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Prestamo" EntityType="Self.T_Prestamo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Prestatario" EntityType="Self.T_Prestatario" Schema="dbo" store:Type="Tables" />
@@ -743,6 +757,14 @@
           <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_PagoDetalle48" FromRole="T_PagoDetalle" ToRole="T_Cuota" />
           <NavigationProperty Name="T_Pago" Relationship="Self.FK_T_PagoDetalle50" FromRole="T_PagoDetalle" ToRole="T_Pago" />
         </EntityType>
+        <EntityType Name="T_Parametro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Padre" Type="Int32" />
+        </EntityType>
         <EntityType Name="T_Perfil">
           <Key>
             <PropertyRef Name="codigoPerfil" />
@@ -785,7 +807,7 @@
           <Property Name="nombresPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidosPrestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaNacimiento" Type="Int16" Nullable="false" />
-          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoDocumento" Type="Int32" Nullable="false" />
           <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ultimaEvaluacion" Type="Int16" Nullable="false" />
           <NavigationProperty Name="T_Inversor" Relationship="Self.FK_T_Inversor53" FromRole="T_Prestatario" ToRole="T_Inversor" />
@@ -853,37 +875,41 @@
           </Key>
           <Property Name="codigoSolCredito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombreSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="apellidosSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="tipoDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaternoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaternoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipoDocumento" Type="Int32" />
           <Property Name="numeroDocumento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="digtitoVerificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="digitoVerificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="numeroCelular" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="fechaNacimiento" Type="Int16" />
-          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="gradoInstruccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="estadoCivil" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="genero" Type="Int32" />
+          <Property Name="gradoInstruccion" Type="Int32" />
+          <Property Name="estadoCivil" Type="Int32" />
           <Property Name="ingresoMensual" Type="Double" />
           <Property Name="direccionSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="distritoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="provinciaSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="dptoSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="paisSolicitante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="areaActividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ocupacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="distritoSolicitante" Type="Int32" />
+          <Property Name="provinciaSolicitante" Type="Int32" />
+          <Property Name="dptoSolicitante" Type="Int32" />
+          <Property Name="paisSolicitante" Type="Int32" />
+          <Property Name="areaActividad" Type="Int32" />
+          <Property Name="ocupacion" Type="Int32" />
           <Property Name="lugarTrabajo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="destinoCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="nombreConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaternoConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaternoConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipoDocumentoConyuge" Type="Int32" />
           <Property Name="numeroDocConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="montoSolicitado" Type="Double" />
           <Property Name="detalleMotivo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="esPEP" Type="Double" />
+          <Property Name="esPEP" Type="Boolean" />
           <Property Name="cargoPEP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="tipoCuenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="nombreEntidad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipoCuenta" Type="Int32" />
+          <Property Name="nombreEntidad" Type="Int32" />
           <Property Name="codigoInterbancario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="seguroDesgravamen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="plazoPrestamo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="plazoPrestamo" Type="Int32" />
           <Property Name="dniValido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="ingresoAcorde" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="sobreEndeudado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -896,6 +922,7 @@
           <Property Name="resultadoEvaluacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="codigoPrestatario" Type="Int32" />
+          <Property Name="codigoPostal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="T_Prestamo" Relationship="Self.FK_T_Prestamo45" FromRole="T_SolicitudCredito" ToRole="T_Prestamo" />
           <NavigationProperty Name="T_Prestatario" Relationship="Self.FK_T_SolicitudCredito43" FromRole="T_SolicitudCredito" ToRole="T_Prestatario" />
           <NavigationProperty Name="T_Subasata" Relationship="Self.FK_T_Subasata44" FromRole="T_SolicitudCredito" ToRole="T_Subasata" />
@@ -1180,6 +1207,7 @@
           <EntitySet Name="T_Oferta" EntityType="Self.T_Oferta" />
           <EntitySet Name="T_Pago" EntityType="Self.T_Pago" />
           <EntitySet Name="T_PagoDetalle" EntityType="Self.T_PagoDetalle" />
+          <EntitySet Name="T_Parametro" EntityType="Self.T_Parametro" />
           <EntitySet Name="T_Perfil" EntityType="Self.T_Perfil" />
           <EntitySet Name="T_Prestamo" EntityType="Self.T_Prestamo" />
           <EntitySet Name="T_Prestatario" EntityType="Self.T_Prestatario" />
@@ -1379,6 +1407,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="T_Parametro">
+            <EntityTypeMapping TypeName="ValentineModel.T_Parametro">
+              <MappingFragment StoreEntitySet="T_Parametro">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Padre" ColumnName="Padre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="T_Perfil">
             <EntityTypeMapping TypeName="ValentineModel.T_Perfil">
               <MappingFragment StoreEntitySet="T_Perfil">
@@ -1484,10 +1521,11 @@
               <MappingFragment StoreEntitySet="T_SolicitudCredito">
                 <ScalarProperty Name="codigoSolCredito" ColumnName="codigoSolCredito" />
                 <ScalarProperty Name="nombreSolicitante" ColumnName="nombreSolicitante" />
-                <ScalarProperty Name="apellidosSolicitante" ColumnName="apellidosSolicitante" />
+                <ScalarProperty Name="apellidoPaternoSolicitante" ColumnName="apellidoPaternoSolicitante" />
+                <ScalarProperty Name="apellidoMaternoSolicitante" ColumnName="apellidoMaternoSolicitante" />
                 <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
                 <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
-                <ScalarProperty Name="digtitoVerificacion" ColumnName="digtitoVerificacion" />
+                <ScalarProperty Name="digitoVerificacion" ColumnName="digitoVerificacion" />
                 <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
                 <ScalarProperty Name="numeroCelular" ColumnName="numeroCelular" />
                 <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
@@ -1505,6 +1543,9 @@
                 <ScalarProperty Name="lugarTrabajo" ColumnName="lugarTrabajo" />
                 <ScalarProperty Name="destinoCredito" ColumnName="destinoCredito" />
                 <ScalarProperty Name="nombreConyuge" ColumnName="nombreConyuge" />
+                <ScalarProperty Name="apellidoPaternoConyuge" ColumnName="apellidoPaternoConyuge" />
+                <ScalarProperty Name="apellidoMaternoConyuge" ColumnName="apellidoMaternoConyuge" />
+                <ScalarProperty Name="tipoDocumentoConyuge" ColumnName="tipoDocumentoConyuge" />
                 <ScalarProperty Name="numeroDocConyuge" ColumnName="numeroDocConyuge" />
                 <ScalarProperty Name="montoSolicitado" ColumnName="montoSolicitado" />
                 <ScalarProperty Name="detalleMotivo" ColumnName="detalleMotivo" />
@@ -1527,6 +1568,7 @@
                 <ScalarProperty Name="resultadoEvaluacion" ColumnName="resultadoEvaluacion" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="codigoPrestatario" ColumnName="codigoPrestatario" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

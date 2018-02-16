@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace TestMultiplica.Services.Areas.HelpPage
+namespace Valentine.Services.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

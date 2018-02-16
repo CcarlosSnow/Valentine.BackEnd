@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using TestMultiplica.Services.Areas.HelpPage.ModelDescriptions;
-using TestMultiplica.Services.Areas.HelpPage.Models;
+using Valentine.Services.Areas.HelpPage.ModelDescriptions;
+using Valentine.Services.Areas.HelpPage.Models;
 
-namespace TestMultiplica.Services.Areas.HelpPage.Controllers
+namespace Valentine.Services.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

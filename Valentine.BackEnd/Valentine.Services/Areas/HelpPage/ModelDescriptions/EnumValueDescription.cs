@@ -1,4 +1,4 @@
-namespace TestMultiplica.Services.Areas.HelpPage.ModelDescriptions
+namespace Valentine.Services.Areas.HelpPage.ModelDescriptions
 {
     public class EnumValueDescription
     {

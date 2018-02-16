@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestMultiplica.Data
+namespace Valentine.Data
 {
     using System;
     using System.Collections.Generic;

@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using TestMultiplica.Services.Areas.HelpPage.ModelDescriptions;
+using Valentine.Services.Areas.HelpPage.ModelDescriptions;
 
-namespace TestMultiplica.Services.Areas.HelpPage
+namespace Valentine.Services.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

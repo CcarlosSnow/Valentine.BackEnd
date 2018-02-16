@@ -6,9 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
-using TestMultiplica.Application.Category.Queries.GetCategories;
 
-namespace TestMultiplica.Services
+namespace Valentine.Services
 {
     public class RouteConfig
     {

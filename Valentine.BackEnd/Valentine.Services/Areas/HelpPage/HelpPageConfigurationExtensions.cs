@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using TestMultiplica.Services.Areas.HelpPage.ModelDescriptions;
-using TestMultiplica.Services.Areas.HelpPage.Models;
+using Valentine.Services.Areas.HelpPage.ModelDescriptions;
+using Valentine.Services.Areas.HelpPage.Models;
 
-namespace TestMultiplica.Services.Areas.HelpPage
+namespace Valentine.Services.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

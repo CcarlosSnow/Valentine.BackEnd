@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestMultiplica.Data
+namespace Valentine.Data
 {
     using System;
     using System.Data.Entity;
@@ -32,6 +32,7 @@ namespace TestMultiplica.Data
         public virtual DbSet<T_Oferta> T_Oferta { get; set; }
         public virtual DbSet<T_Pago> T_Pago { get; set; }
         public virtual DbSet<T_PagoDetalle> T_PagoDetalle { get; set; }
+        public virtual DbSet<T_Parametro> T_Parametro { get; set; }
         public virtual DbSet<T_Perfil> T_Perfil { get; set; }
         public virtual DbSet<T_Prestamo> T_Prestamo { get; set; }
         public virtual DbSet<T_Prestatario> T_Prestatario { get; set; }

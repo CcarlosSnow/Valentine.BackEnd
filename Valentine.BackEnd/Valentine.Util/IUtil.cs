@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestMultiplica.Util
+namespace Valentine.Util
 {
     public interface IUtil
     {
-        string XMLCategory();
+        //string XMLCategory();
 
-        string XMLProduct();
+        //string XMLProduct();
 
-        bool GenerateXMLSeed();
+        //bool GenerateXMLSeed();
     }
 }
