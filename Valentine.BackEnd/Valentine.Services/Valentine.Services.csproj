@@ -235,6 +235,7 @@
     <Compile Include="Controllers\T_OfertaController.cs" />
     <Compile Include="Controllers\T_PagoController.cs" />
     <Compile Include="Controllers\T_PagoDetalleController.cs" />
+    <Compile Include="Controllers\T_ParametroController.cs" />
     <Compile Include="Controllers\T_PerfilController.cs" />
     <Compile Include="Controllers\T_PrestamoController.cs" />
     <Compile Include="Controllers\T_PrestatarioController.cs" />
