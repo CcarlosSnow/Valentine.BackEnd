@@ -66,6 +66,8 @@
     <Compile Include="T_SolicitudCredito\Queries\GetSolicitudCredito\GetSolicitudAfiliacionQuery.cs" />
     <Compile Include="T_SolicitudCredito\Queries\GetSolicitudCredito\GetSolicitudAfiliacionQueryModel.cs" />
     <Compile Include="T_SolicitudCredito\Queries\GetSolicitudCredito\IGetSolicitudAfiliacionQuery.cs" />
+    <Compile Include="T_Ubigeo\Queries\GetUbigeoByIdPadre\GetUbigeoByIdPadreQuery.cs" />
+    <Compile Include="T_Ubigeo\Queries\GetUbigeoByIdPadre\IGetUbigeoByIdPadreQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="T_Concepto\Commands\" />

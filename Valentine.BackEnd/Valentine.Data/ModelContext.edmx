@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ValentineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ValentineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="T_Concepto">
           <Key>
             <PropertyRef Name="codigoConcepto" />
@@ -241,7 +241,7 @@
           <Property Name="areaActividad" Type="int" />
           <Property Name="ocupacion" Type="int" />
           <Property Name="lugarTrabajo" Type="varchar" MaxLength="255" />
-          <Property Name="destinoCredito" Type="varchar" MaxLength="255" />
+          <Property Name="destinoCredito" Type="int" />
           <Property Name="nombreConyuge" Type="varchar" MaxLength="255" />
           <Property Name="apellidoPaternoConyuge" Type="varchar" MaxLength="255" />
           <Property Name="apellidoMaternoConyuge" Type="varchar" MaxLength="255" />
@@ -297,6 +297,14 @@
           <Property Name="codigoPrestamo" Type="int" />
           <Property Name="codigoCuota" Type="int" />
           <Property Name="codigoCuenta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Ubigeo">
+          <Key>
+            <PropertyRef Name="Ubigeo_ID" />
+          </Key>
+          <Property Name="Ubigeo_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Ubigeo_Padre" Type="int" />
         </EntityType>
         <EntityType Name="T_Usuario">
           <Key>
@@ -553,6 +561,7 @@
           <EntitySet Name="T_SolicitudCredito" EntityType="Self.T_SolicitudCredito" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Subasata" EntityType="Self.T_Subasata" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Transaccion" EntityType="Self.T_Transaccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Ubigeo" EntityType="Self.T_Ubigeo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Usuario" EntityType="Self.T_Usuario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_T_Cuenta40" Association="Self.FK_T_Cuenta40">
             <End Role="T_Inversor" EntitySet="T_Inversor" />
@@ -627,8 +636,7 @@
             <End Role="T_Usuario" EntitySet="T_Usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ValentineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -895,7 +903,7 @@
           <Property Name="areaActividad" Type="Int32" />
           <Property Name="ocupacion" Type="Int32" />
           <Property Name="lugarTrabajo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="destinoCredito" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="destinoCredito" Type="Int32" />
           <Property Name="nombreConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="apellidoPaternoConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="apellidoMaternoConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -960,6 +968,14 @@
           <NavigationProperty Name="T_Cuenta" Relationship="Self.FK_T_Transaccion49" FromRole="T_Transaccion" ToRole="T_Cuenta" />
           <NavigationProperty Name="T_Cuota" Relationship="Self.FK_T_Transaccion47" FromRole="T_Transaccion" ToRole="T_Cuota" />
         </EntityType>
+        <EntityType Name="T_Ubigeo">
+          <Key>
+            <PropertyRef Name="Ubigeo_ID" />
+          </Key>
+          <Property Name="Ubigeo_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ubigeo_Padre" Type="Int32" />
+          </EntityType>
         <EntityType Name="T_Usuario">
           <Key>
             <PropertyRef Name="codigoUsuario" />
@@ -1216,6 +1232,7 @@
           <EntitySet Name="T_SolicitudCredito" EntityType="Self.T_SolicitudCredito" />
           <EntitySet Name="T_Subasata" EntityType="Self.T_Subasata" />
           <EntitySet Name="T_Transaccion" EntityType="Self.T_Transaccion" />
+          <EntitySet Name="T_Ubigeo" EntityType="Self.T_Ubigeo" />
           <EntitySet Name="T_Usuario" EntityType="Self.T_Usuario" />
           <AssociationSet Name="FK_T_PagoDetalle52" Association="Self.FK_T_PagoDetalle52">
             <End Role="T_Concepto" EntitySet="T_Concepto" />
@@ -1599,6 +1616,15 @@
                 <ScalarProperty Name="codigoPrestamo" ColumnName="codigoPrestamo" />
                 <ScalarProperty Name="codigoCuota" ColumnName="codigoCuota" />
                 <ScalarProperty Name="codigoCuenta" ColumnName="codigoCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Ubigeo">
+            <EntityTypeMapping TypeName="ValentineModel.T_Ubigeo">
+              <MappingFragment StoreEntitySet="T_Ubigeo">
+                <ScalarProperty Name="Ubigeo_ID" ColumnName="Ubigeo_ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Ubigeo_Padre" ColumnName="Ubigeo_Padre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

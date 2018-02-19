@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99d1de5250324a54b2a1b7769085a5a1" Name="Diagram1">
+      <Diagram DiagramId="c49788fa8f524394b5c0ae21ded04e68" Name="Diagram1">
         <EntityTypeShape EntityType="ValentineModel.T_Concepto" Width="1.5" PointX="9.75" PointY="21.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Cuenta" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Cuota" Width="1.5" PointX="7.5" PointY="25.125" IsExpanded="true" />
@@ -12,16 +12,17 @@
         <EntityTypeShape EntityType="ValentineModel.T_Oferta" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Pago" Width="1.5" PointX="9.75" PointY="25" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_PagoDetalle" Width="1.5" PointX="12" PointY="25.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ValentineModel.T_Parametro" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ValentineModel.T_Perfil" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValentineModel.T_Parametro" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValentineModel.T_Perfil" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Prestamo" Width="1.5" PointX="5.25" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Prestatario" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ValentineModel.T_Solicitante" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValentineModel.T_Solicitante" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_SolicitudAfiliacion" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_SolicitudCredito" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Subasata" Width="1.5" PointX="7.5" PointY="29.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ValentineModel.T_Transaccion" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ValentineModel.T_Usuario" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValentineModel.T_Ubigeo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValentineModel.T_Usuario" Width="1.5" PointX="5" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="ValentineModel.FK_T_PagoDetalle52" ManuallyRouted="false" />
         <AssociationConnector Association="ValentineModel.FK_T_Cuenta40" ManuallyRouted="false" />
         <AssociationConnector Association="ValentineModel.FK_T_Transaccion49" ManuallyRouted="false" />

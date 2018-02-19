@@ -244,6 +244,7 @@
     <Compile Include="Controllers\T_SolicitudCreditoController.cs" />
     <Compile Include="Controllers\T_SubastaController.cs" />
     <Compile Include="Controllers\T_TransaccionController.cs" />
+    <Compile Include="Controllers\T_UbigeoController.cs" />
     <Compile Include="Controllers\T_UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

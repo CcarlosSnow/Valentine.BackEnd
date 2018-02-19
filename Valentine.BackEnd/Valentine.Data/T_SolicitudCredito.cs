@@ -43,7 +43,7 @@ namespace Valentine.Data
         public Nullable<int> areaActividad { get; set; }
         public Nullable<int> ocupacion { get; set; }
         public string lugarTrabajo { get; set; }
-        public string destinoCredito { get; set; }
+        public Nullable<int> destinoCredito { get; set; }
         public string nombreConyuge { get; set; }
         public string apellidoPaternoConyuge { get; set; }
         public string apellidoMaternoConyuge { get; set; }

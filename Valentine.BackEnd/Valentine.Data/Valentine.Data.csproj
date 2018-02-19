@@ -113,6 +113,9 @@
     <Compile Include="T_Transaccion.cs">
       <DependentUpon>ModelContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="T_Ubigeo.cs">
+      <DependentUpon>ModelContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="T_Usuario.cs">
       <DependentUpon>ModelContext.tt</DependentUpon>
     </Compile>

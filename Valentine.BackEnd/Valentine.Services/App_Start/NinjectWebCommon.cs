@@ -27,6 +27,7 @@ using Valentine.Application.T_SolicitudCredito.Commands.RegisterFirstStep;
 using Valentine.Application.T_SolicitudCredito.Commands.RegisterSecondStep;
 using Valentine.Application.T_SolicitudCredito.Queries.GetSolicitudCredito;
 using Valentine.Application.T_Parametro.Queries.GetParametroByIdPadre;
+using Valentine.Application.T_Ubigeo.Queries.GetUbigeoByIdPadre;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Valentine.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Valentine.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -79,6 +80,7 @@ namespace Valentine.Web.App_Start
             kernel.Bind<IRegisterSecondStepCommand>().To<RegisterSecondStepCommand>();
             kernel.Bind<IGetSolicitudCreditoQuery>().To<GetSolicitudCreditoQuery>();
             kernel.Bind<IGetParametroByIdPadreQuery>().To<GetParametroByIdPadreQuery>();
+            kernel.Bind<IGetUbigeoByIdPadreQuery>().To<GetUbigeoByIdPadreQuery>();
             kernel.Bind<IUtil>().To<Valentine.Util.Util>();
 
         }
