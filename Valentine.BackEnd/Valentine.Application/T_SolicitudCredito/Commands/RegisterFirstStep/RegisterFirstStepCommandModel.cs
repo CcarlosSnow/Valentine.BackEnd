@@ -33,6 +33,6 @@ namespace Valentine.Application.T_SolicitudCredito.Commands.RegisterFirstStep
 
         public int gradoInstruccion { get; set; }
 
-        public string destinoCredito { get; set; }
+        public int destinoCredito { get; set; }
     }
 }

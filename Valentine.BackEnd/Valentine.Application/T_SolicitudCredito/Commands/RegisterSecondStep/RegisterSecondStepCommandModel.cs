@@ -28,6 +28,8 @@ namespace Valentine.Application.T_SolicitudCredito.Commands.RegisterSecondStep
 
         public int estadoCivil { get; set; }
 
+        public string detalleMotivo { get; set; }
+
         public string apellidoPaternoConyuge { get; set; }
 
         public string apellidoMaternoConyuge { get; set; }
