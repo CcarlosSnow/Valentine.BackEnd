@@ -43,5 +43,6 @@ namespace Valentine.Data
         public virtual DbSet<T_Transaccion> T_Transaccion { get; set; }
         public virtual DbSet<T_Ubigeo> T_Ubigeo { get; set; }
         public virtual DbSet<T_Usuario> T_Usuario { get; set; }
+        public virtual DbSet<T_Archivo> T_Archivo { get; set; }
     }
 }

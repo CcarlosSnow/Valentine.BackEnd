@@ -41,6 +41,7 @@
         <AssociationConnector Association="ValentineModel.FK_T_Subasata38" ManuallyRouted="false" />
         <AssociationConnector Association="ValentineModel.FK_T_SolicitudCredito43" ManuallyRouted="false" />
         <AssociationConnector Association="ValentineModel.FK_T_Subasata44" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ValentineModel.T_Archivo" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

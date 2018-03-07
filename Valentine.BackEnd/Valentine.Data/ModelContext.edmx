@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ValentineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_Archivo">
+          <Key>
+            <PropertyRef Name="codigoArchivo" />
+          </Key>
+          <Property Name="codigoArchivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoSolCredito" Type="int" Nullable="false" />
+          <Property Name="rutaArchivo" Type="varchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="T_Concepto">
           <Key>
             <PropertyRef Name="codigoConcepto" />
@@ -545,6 +553,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ValentineModelStoreContainer">
+          <EntitySet Name="T_Archivo" EntityType="Self.T_Archivo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Concepto" EntityType="Self.T_Concepto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Cuenta" EntityType="Self.T_Cuenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Cuota" EntityType="Self.T_Cuota" Schema="dbo" store:Type="Tables" />
@@ -1306,7 +1315,16 @@
             <End Role="T_SolicitudCredito" EntitySet="T_SolicitudCredito" />
             <End Role="T_Subasata" EntitySet="T_Subasata" />
           </AssociationSet>
+          <EntitySet Name="T_Archivo" EntityType="ValentineModel.T_Archivo" />
         </EntityContainer>
+        <EntityType Name="T_Archivo">
+          <Key>
+            <PropertyRef Name="codigoArchivo" />
+          </Key>
+          <Property Name="codigoArchivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoSolCredito" Type="Int32" Nullable="false" />
+          <Property Name="rutaArchivo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1636,6 +1654,15 @@
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="clave" ColumnName="clave" />
                 <ScalarProperty Name="codigoPerfil" ColumnName="codigoPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Archivo">
+            <EntityTypeMapping TypeName="ValentineModel.T_Archivo">
+              <MappingFragment StoreEntitySet="T_Archivo">
+                <ScalarProperty Name="rutaArchivo" ColumnName="rutaArchivo" />
+                <ScalarProperty Name="codigoSolCredito" ColumnName="codigoSolCredito" />
+                <ScalarProperty Name="codigoArchivo" ColumnName="codigoArchivo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
