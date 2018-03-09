@@ -57,7 +57,7 @@ namespace Valentine.Web.App_Start
             kernel.Bind<IGetSolicitudCreditoQuery>().To<GetSolicitudCreditoQuery>();
             kernel.Bind<IGetParametroByIdPadreQuery>().To<GetParametroByIdPadreQuery>();
             kernel.Bind<IGetUbigeoByIdPadreQuery>().To<GetUbigeoByIdPadreQuery>();
-            kernel.Bind<IGetUbigeoByIdPadreQuery>().To<GetUbigeoByIdPadreQuery>();
+            //kernel.Bind<IGetUbigeoByIdPadreQuery>().To<GetUbigeoByIdPadreQuery>();
             kernel.Bind<IUploadFileCommand>().To<UploadFileCommand>();
             kernel.Bind<IGetArchivoByCodigoSolCreditoQuery>().To<GetArchivoByCodigoSolCreditoQuery>();
             kernel.Bind<IUtil>().To<Util.Util>();
