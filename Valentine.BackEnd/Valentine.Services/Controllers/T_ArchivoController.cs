@@ -35,18 +35,25 @@ namespace Valentine.Services.Controllers
             return _IGetArchivoByCodigoSolCreditoQuery.Execute(id);
         }
 
-        [ResponseType(typeof(UploadFileModel))]
-        public IHttpActionResult PutT_ArchivoUploadFile(UploadFileModel uploadFileModel)
+        [ResponseType(typeof(List<UploadFileModel>))]
+        public IHttpActionResult PutT_ArchivoUploadFile(List<UploadFileModel> uploadFileModel)
         {
-            Guid guid = Guid.NewGuid();
+            foreach (var item in uploadFileModel)
+            {
+                Guid guid = Guid.NewGuid();
 
-            string ImageType = uploadFileModel.Extension;
+                string FileType = item.Extension;
 
-            byte[] ImageArray = Convert.FromBase64String(uploadFileModel.Image.Substring(uploadFileModel.Image.IndexOf(',') + 1));
+                byte[] FileArray = Convert.FromBase64String(item.File.Substring(item.File.IndexOf(',') + 1));
 
-            uploadFileModel.Name = StorageHelper.UploadAsync(uploadFileModel.Container, guid.ToString() + "." + ImageType, ImageArray);
+                item.Name = StorageHelper.UploadAsync(item.Container, guid.ToString() + "." + FileType, FileArray);
 
-            StorageHelper.UploadAsync(uploadFileModel.Container, uploadFileModel.Name, ImageArray);
+                Data.T_Archivo model = new Data.T_Archivo();
+                model.codigoSolCredito = item.SolicitudCreditoId;
+                model.rutaArchivo = item.Name;
+
+                _IUploadFileCommand.Execute(model);
+            }
 
             return Ok(uploadFileModel);
         }

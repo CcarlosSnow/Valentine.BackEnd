@@ -7,6 +7,8 @@ using Valentine.Data;
 using Valentine.Application.T_SolicitudCredito.Queries.GetSolicitudCredito;
 using AutoMapper;
 using System.Data.Entity;
+using System.Net.Mail;
+using System.Net;
 
 namespace Valentine.Application.T_SolicitudCredito.Commands.RegisterSecondStep
 {
@@ -29,6 +31,14 @@ namespace Valentine.Application.T_SolicitudCredito.Commands.RegisterSecondStep
                 _Entities.T_SolicitudCredito.Attach(_T_SolicitudCredito);
                 _Entities.Entry(_T_SolicitudCredito).State = EntityState.Modified;
                 _Entities.SaveChanges();
+
+                var client = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials = new NetworkCredential("jcbazanochoa@gmail.com", "everythingwillbefinegmail"),
+                    EnableSsl = true
+                };
+
+                client.Send("jcbazanochoa@gmail.com", _T_SolicitudCredito.correoElectronico, "test", "testbody");
 
                 return Model;
             }

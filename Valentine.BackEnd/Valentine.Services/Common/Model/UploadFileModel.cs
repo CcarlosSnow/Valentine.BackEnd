@@ -9,7 +9,8 @@ namespace Valentine.Services.Common.Model
     {
         public string Container { get; set; }
         public string Name { get; set; }
-        public string Image { get; set; }
+        public string File { get; set; }
         public string Extension { get; set; }
+        public int SolicitudCreditoId { get; set; }
     }
 }
