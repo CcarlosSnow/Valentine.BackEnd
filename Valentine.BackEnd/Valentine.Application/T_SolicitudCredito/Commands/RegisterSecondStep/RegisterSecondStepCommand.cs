@@ -34,11 +34,11 @@ namespace Valentine.Application.T_SolicitudCredito.Commands.RegisterSecondStep
 
                 var client = new SmtpClient("smtp.gmail.com", 587)
                 {
-                    Credentials = new NetworkCredential("jcbazanochoa@gmail.com", "everythingwillbefinegmail"),
+                    Credentials = new NetworkCredential("valentinebackemail@gmail.com", "valentinepassword"),
                     EnableSsl = true
                 };
 
-                client.Send("jcbazanochoa@gmail.com", _T_SolicitudCredito.correoElectronico, "test", "testbody");
+                client.Send("valentinebackemail@gmail.com", _T_SolicitudCredito.correoElectronico, "test", "testbody");
 
                 return Model;
             }
